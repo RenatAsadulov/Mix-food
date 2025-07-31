@@ -6,15 +6,15 @@ const translations = {
     hero: {
       heading: "Flavor solutions that inspire",
       text:
-        "We deliver premium flavorings and raw ingredients from Poland (JAR) to help Ukrainian brands craft products their customers love.",
+        "We craft unique flavorings and supply premium ingredients from Poland, shipping to manufacturers across Ukraine so they can create products customers love.",
       button: "Get in touch",
     },
     about: {
       heading: "About us",
       p1:
-        "MixFood is a Ukrainian company focused on supplying food flavorings and ingredients. We import high-quality materials from our Polish partner JAR and work with market leaders such as «Лев» and «Ласунка».",
+        "MixFood is a Ukrainian company that creates its own unique flavorings and supplies food ingredients. We import high-quality materials from our Polish partner JAR and work with market leaders such as «Лев» and «Ласунка».",
       p2:
-        "Our mission is to help manufacturers develop outstanding products by offering reliable deliveries, technical expertise and complete flavor solutions.",
+        "Our mission is to help manufacturers develop outstanding products by offering our flavors, reliable nationwide deliveries, technical expertise and complete flavor solutions.",
     },
     news: {
       heading: "News",
@@ -54,15 +54,15 @@ const translations = {
     hero: {
       heading: "Смакові рішення, що надихають",
       text:
-        "Ми постачаємо якісні ароматизатори та сировину з Польщі (JAR), щоб українські бренди створювали продукти, які полюбляють споживачі.",
+        "Ми виготовляємо унікальні ароматизатори та постачаємо високоякісні інгредієнти з Польщі виробникам по всій Україні, допомагаючи їм створювати продукти, які полюбляють споживачі.",
       button: "Зв'язатися",
     },
     about: {
       heading: "Про компанію",
       p1:
-        "MixFood — українська компанія, що займається постачанням харчових ароматизаторів та інгредієнтів. Ми імпортуємо високоякісні матеріали від польського партнера JAR та співпрацюємо з лідерами ринку, такими як «Лев» та «Ласунка».",
+        "MixFood — українська компанія, що розробляє власні унікальні ароматизатори та постачає харчові інгредієнти. Ми імпортуємо високоякісні матеріали від польського партнера JAR та співпрацюємо з лідерами ринку, такими як «Лев» та «Ласунка».",
       p2:
-        "Наша місія — допомагати виробникам створювати неперевершені продукти, забезпечуючи надійні поставки, технічну експертизу та комплексні смакові рішення.",
+        "Наша місія — допомагати виробникам створювати неперевершені продукти, пропонуючи власні ароматизатори, надійні поставки по всій Україні, технічну експертизу та комплексні смакові рішення.",
     },
     news: {
       heading: "Новини",
@@ -102,15 +102,15 @@ const translations = {
     hero: {
       heading: "Rozwiązania smakowe, które inspirują",
       text:
-        "Dostarczamy najwyższej jakości aromaty i surowce z Polski (JAR), pomagając ukraińskim markom tworzyć produkty uwielbiane przez klientów.",
+        "Tworzymy unikalne aromaty i dostarczamy wysokiej jakości składniki z Polski do producentów w całej Ukrainie, pomagając im w tworzeniu produktów uwielbianych przez klientów.",
       button: "Skontaktuj się",
     },
     about: {
       heading: "O firmie",
       p1:
-        "MixFood to ukraińska firma zajmująca się dostawami aromatów i składników spożywczych. Importujemy wysokiej jakości materiały od polskiego partnera JAR i współpracujemy z liderami rynku takimi jak «Лев» i «Ласунка».",
+        "MixFood to ukraińska firma, która opracowuje własne unikalne aromaty i dostarcza składniki spożywcze. Importujemy wysokiej jakości materiały od polskiego partnera JAR i współpracujemy z liderami rynku takimi jak «Лев» i «Ласунка».",
       p2:
-        "Naszym celem jest pomagać producentom w tworzeniu doskonałych produktów poprzez niezawodne dostawy, wsparcie techniczne i kompleksowe rozwiązania smakowe.",
+        "Naszym celem jest pomagać producentom w tworzeniu doskonałych produktów, oferując nasze aromaty, niezawodne dostawy na terenie całej Ukrainy, wsparcie techniczne i kompleksowe rozwiązania smakowe.",
     },
     news: {
       heading: "Aktualności",
