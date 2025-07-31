@@ -7,7 +7,7 @@ module.exports = {
         primary: "#38bdf8",
       },
       backgroundImage: {
-        "hero-pattern": "url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80')",
+        "hero-pattern": "url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1470&q=80')",
       },
     },
   },
