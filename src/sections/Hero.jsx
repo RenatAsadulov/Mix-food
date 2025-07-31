@@ -5,12 +5,8 @@ import { useI18n } from "../i18n.jsx";
 export default function Hero() {
   const { t } = useI18n();
   return (
-    <section
-      className="bg-hero text-white text-center d-flex align-items-center"
-      style={{ minHeight: "70vh" }}
-      id="hero"
-    >
-      <div className="backdrop-dark w-100 py-5 px-3">
+    <section className="hero-section" id="hero">
+      <div className="hero-content container py-5">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

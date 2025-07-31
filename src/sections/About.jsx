@@ -4,7 +4,7 @@ import { useI18n } from "../i18n.jsx";
 export default function About() {
   const { t } = useI18n();
   return (
-    <section id="about" className="container py-5">
+    <section id="about" className="about-section container section-padding">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

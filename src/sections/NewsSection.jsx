@@ -6,7 +6,7 @@ export default function NewsSection() {
   const { t, lang } = useI18n();
   const newsData = t("news.items");
   return (
-    <section id="news" className="bg-light py-5">
+    <section id="news" className="news-section bg-light section-padding">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
