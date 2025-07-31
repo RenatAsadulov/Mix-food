@@ -56,10 +56,7 @@ export default function Header() {
             </li>
           ))}
           <li>
-            <LanguageSwitcher
-              className="justify-between"
-              onSelect={() => setOpen(false)}
-            />
+            <LanguageSwitcher onSelect={() => setOpen(false)} />
           </li>
         </ul>
       )}
