@@ -12,7 +12,7 @@ const translations = {
     about: {
       heading: "About us",
       p1:
-        "MixFood is a Ukrainian company that creates its own unique flavorings and supplies food ingredients. We import high-quality materials from our Polish partner JAR and work with market leaders such as «Лев» and «Ласунка».",
+        "MixFood is a Ukrainian company that develops its own unique flavoring patterns for desserts and other foods. We supply premium ingredients imported from our Polish partner JAR and collaborate with market leaders such as «Лев» and «Ласунка».",
       p2:
         "Our mission is to help manufacturers develop outstanding products by offering our flavors, reliable nationwide deliveries, technical expertise and complete flavor solutions.",
     },
@@ -60,7 +60,7 @@ const translations = {
     about: {
       heading: "Про компанію",
       p1:
-        "MixFood — українська компанія, що розробляє власні унікальні ароматизатори та постачає харчові інгредієнти. Ми імпортуємо високоякісні матеріали від польського партнера JAR та співпрацюємо з лідерами ринку, такими як «Лев» та «Ласунка».",
+        "MixFood — українська компанія, що розробляє власні унікальні ароматизатори й смакові патерни для десертів та інших продуктів. Ми постачаємо високоякісні інгредієнти з Польщі від партнера JAR та співпрацюємо з лідерами ринку, такими як «Лев» та «Ласунка».",
       p2:
         "Наша місія — допомагати виробникам створювати неперевершені продукти, пропонуючи власні ароматизатори, надійні поставки по всій Україні, технічну експертизу та комплексні смакові рішення.",
     },
@@ -108,7 +108,7 @@ const translations = {
     about: {
       heading: "O firmie",
       p1:
-        "MixFood to ukraińska firma, która opracowuje własne unikalne aromaty i dostarcza składniki spożywcze. Importujemy wysokiej jakości materiały od polskiego partnera JAR i współpracujemy z liderami rynku takimi jak «Лев» i «Ласунка».",
+        "MixFood to ukraińska firma, która opracowuje własne unikalne wzorce aromatów dla deserów i innych produktów. Dostarczamy wysokiej jakości składniki importowane od polskiego partnera JAR i współpracujemy z liderami rynku, takimi jak «Лев» i «Ласунка».",
       p2:
         "Naszym celem jest pomagać producentom w tworzeniu doskonałych produktów, oferując nasze aromaty, niezawodne dostawy na terenie całej Ukrainy, wsparcie techniczne i kompleksowe rozwiązania smakowe.",
     },

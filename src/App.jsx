@@ -10,8 +10,8 @@ export default function App() {
     <div className="font-sans antialiased scroll-smooth">
       <Header />
       <main>
-        <Hero />
         <About />
+        <Hero />
         <NewsSection />
         <Contact />
       </main>
