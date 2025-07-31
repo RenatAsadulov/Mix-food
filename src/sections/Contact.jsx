@@ -52,8 +52,8 @@ export default function Contact() {
                   animate={{ opacity: 1 }}
                   className="text-center"
               >
-                <h4 className="text-xl font-semibold mb-2">{t("contact.thankTitle")}</h4>
-                <p className="text-gray-700">{t("contact.thankText")}</p>
+                <h4 className="h5 fw-semibold mb-2">{t("contact.thankTitle")}</h4>
+                <p className="text-body">{t("contact.thankText")}</p>
               </motion.div>
             ) : (
               <form className="vstack gap-3" onSubmit={handleSubmit}>

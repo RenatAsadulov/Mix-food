@@ -36,7 +36,7 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
         >
-          <Menu className="h-6 w-6" />
+          <Menu size={24} />
         </button>
       </div>
       {open && (
