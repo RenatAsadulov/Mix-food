@@ -6,7 +6,7 @@ export default function Hero() {
   const { t } = useI18n();
   return (
     <section
-      className="bg-hero-pattern bg-cover bg-center min-h-screen py-24 sm:py-32 text-center text-white"
+      className="bg-hero-pattern bg-cover bg-center min-h-[70vh] py-24 sm:py-32 text-center text-white"
       id="hero"
     >
       <div className="backdrop-brightness-75 py-16 px-4">
