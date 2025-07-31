@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "../i18n/i18n";
 
 export default function Hero() {
+  const { t } = useI18n();
   return (
     <section
       className="bg-hero-pattern bg-cover bg-center py-24 text-center text-white"
@@ -14,14 +16,13 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-5xl font-extrabold mb-6"
         >
-          Flavor solutions that inspire
+          {t("hero.title")}
         </motion.h2>
         <p className="max-w-2xl mx-auto text-lg md:text-xl mb-8">
-          We deliver premium flavorings and raw ingredients from Poland (JAR) to
-          help Ukrainian brands craft products their customers love.
+          {t("hero.subtitle")}
         </p>
         <Button asChild size="lg">
-          <a href="#contact">Get in touch</a>
+          <a href="#contact">{t("hero.cta")}</a>
         </Button>
       </div>
     </section>

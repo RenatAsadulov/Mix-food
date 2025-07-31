@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "../i18n/i18n";
 
 export default function Contact() {
+  const { t } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -26,7 +28,7 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold mb-6 text-center"
       >
-        Contact us
+        {t("contact.title")}
       </motion.h3>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -50,14 +52,14 @@ export default function Contact() {
                 animate={{ opacity: 1 }}
                 className="text-center"
               >
-                <h4 className="text-xl font-semibold mb-2">Thank you!</h4>
-                <p className="text-gray-700">We will contact you soon.</p>
+                <h4 className="text-xl font-semibold mb-2">{t("contact.successTitle")}</h4>
+                <p className="text-gray-700">{t("contact.successMessage")}</p>
               </motion.div>
             ) : (
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Name
+                    {t("contact.name")}
                   </label>
                   <input
                     type="text"
@@ -71,7 +73,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email
+                    {t("contact.email")}
                   </label>
                   <input
                     type="email"
@@ -85,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    Message
+                    {t("contact.message")}
                   </label>
                   <textarea
                     id="message"
@@ -98,7 +100,7 @@ export default function Contact() {
                   />
                 </div>
                 <Button type="submit" className="w-full">
-                  Send
+                  {t("contact.send")}
                 </Button>
               </form>
             )}
