@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { useI18n } from "../../i18n.jsx";
+import LanguageSwitcher from "../LanguageSwitcher.jsx";
 
 const navLinks = [
   { id: "about", label: "nav.about" },
@@ -10,7 +11,7 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { lang, setLang, t } = useI18n();
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -29,15 +30,7 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <select
-                value={lang}
-                onChange={(e) => setLang(e.target.value)}
-                className="border-gray-300 rounded text-sm"
-              >
-                <option value="en">EN</option>
-                <option value="uk">UA</option>
-                <option value="pl">PL</option>
-              </select>
+              <LanguageSwitcher />
             </li>
           </ul>
         </nav>
@@ -63,18 +56,10 @@ export default function Header() {
             </li>
           ))}
           <li>
-            <select
-              value={lang}
-              onChange={(e) => {
-                setLang(e.target.value);
-                setOpen(false);
-              }}
-              className="border-gray-300 rounded text-sm w-full"
-            >
-              <option value="en">EN</option>
-              <option value="uk">UA</option>
-              <option value="pl">PL</option>
-            </select>
+            <LanguageSwitcher
+              className="justify-between"
+              onSelect={() => setOpen(false)}
+            />
           </li>
         </ul>
       )}
