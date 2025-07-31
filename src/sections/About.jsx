@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
+import { useI18n } from "../i18n.jsx";
 
 export default function About() {
+  const { t } = useI18n();
   return (
-    <section id="about" className="max-w-6xl mx-auto py-20 px-4">
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-3xl font-bold mb-6 text-center"
-      >
-        About us
-      </motion.h3>
-      <p className="text-lg leading-relaxed text-gray-700 mb-4">
-        MixFood is a Ukrainian company focused on supplying food flavorings and
-        ingredients. We import high‑quality materials from our Polish partner
-        JAR and work with market leaders such as «Лев» and «Ласунка».
-      </p>
-      <p className="text-lg leading-relaxed text-gray-700">
-        Our mission is to help manufacturers develop outstanding products by
-        offering reliable deliveries, technical expertise and complete flavor
-        solutions.
-      </p>
+    <section id="about" className="about-section section-padding">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="h3 fw-bold text-center mb-4"
+            >
+              {t("about.heading")}
+            </motion.h3>
+            <p className="fs-5 text-body mb-3">{t("about.p1")}</p>
+            <p className="fs-5 text-body">{t("about.p2")}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
