@@ -1,31 +1,44 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import { useI18n } from "../../i18n.jsx";
 
 const navLinks = [
-  { id: "about", label: "About" },
-  { id: "news", label: "News" },
-  { id: "contact", label: "Contact" },
+  { id: "about", label: "nav.about" },
+  { id: "news", label: "nav.news" },
+  { id: "contact", label: "nav.contact" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { lang, setLang, t } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
         <h1 className="text-2xl font-bold text-primary">MixFood</h1>
         <nav className="hidden md:block">
-          <ul className="flex gap-6">
+          <ul className="flex gap-6 items-center">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
                   className="text-gray-700 hover:text-primary transition-colors"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </a>
               </li>
             ))}
+            <li>
+              <select
+                value={lang}
+                onChange={(e) => setLang(e.target.value)}
+                className="border-gray-300 rounded text-sm"
+              >
+                <option value="en">EN</option>
+                <option value="uk">UA</option>
+                <option value="pl">PL</option>
+              </select>
+            </li>
           </ul>
         </nav>
         <button
@@ -45,10 +58,24 @@ export default function Header() {
                 className="block text-gray-700 hover:text-primary py-2"
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                {t(link.label)}
               </a>
             </li>
           ))}
+          <li>
+            <select
+              value={lang}
+              onChange={(e) => {
+                setLang(e.target.value);
+                setOpen(false);
+              }}
+              className="border-gray-300 rounded text-sm w-full"
+            >
+              <option value="en">EN</option>
+              <option value="uk">UA</option>
+              <option value="pl">PL</option>
+            </select>
+          </li>
         </ul>
       )}
     </header>
