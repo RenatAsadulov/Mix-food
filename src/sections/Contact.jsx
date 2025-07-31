@@ -20,45 +20,45 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto py-20 px-4">
+    <section id="contact" className="container py-5">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold mb-6 text-center"
+        className="h3 fw-bold text-center mb-4"
       >
         {t("contact.heading")}
       </motion.h3>
-
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <p className="flex items-center gap-3 text-gray-700">
-            <Mail className="w-5 h-5" /> info@mixfood.com
+      <div className="row g-4">
+        <div className="col-md-6">
+          <p className="d-flex align-items-center gap-2 text-body">
+            <Mail size={20} /> info@mixfood.com
           </p>
-          <p className="flex items-center gap-3 text-gray-700">
-            <Phone className="w-5 h-5" /> +380 (44) 123-45-67
+          <p className="d-flex align-items-center gap-2 text-body">
+            <Phone size={20} /> +380 (44) 123-45-67
           </p>
-          <p className="flex items-center gap-3 text-gray-700">
-            <MapPin className="w-5 h-5" /> Kyiv, Khreshchatyk 1
+          <p className="d-flex align-items-center gap-2 text-body">
+            <MapPin size={20} /> Kyiv, Khreshchatyk 1
           </p>
         </div>
 
-        <Card>
-          <CardContent className="p-6">
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center"
+        <div className="col-md-6">
+          <Card>
+            <CardContent>
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center"
               >
                 <h4 className="text-xl font-semibold mb-2">{t("contact.thankTitle")}</h4>
                 <p className="text-gray-700">{t("contact.thankText")}</p>
               </motion.div>
             ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form className="vstack gap-3" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  <label htmlFor="name" className="form-label">
                     {t("contact.name")}
                   </label>
                   <input
@@ -68,11 +68,11 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="form-control"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  <label htmlFor="email" className="form-label">
                     {t("contact.email")}
                   </label>
                   <input
@@ -82,11 +82,11 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="form-control"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
+                  <label htmlFor="message" className="form-label">
                     {t("contact.message")}
                   </label>
                   <textarea
@@ -96,16 +96,17 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="form-control"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-100">
                   {t("contact.send")}
                 </Button>
               </form>
             )}
           </CardContent>
-        </Card>
+          </Card>
+        </div>
       </div>
     </section>
   );

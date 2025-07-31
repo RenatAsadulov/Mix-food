@@ -7,7 +7,7 @@ import Contact from "@/sections/Contact";
 
 export default function App() {
   return (
-    <div className="font-sans antialiased scroll-smooth">
+    <div>
       <Header />
       <main>
         <About />

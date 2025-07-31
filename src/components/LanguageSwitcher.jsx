@@ -19,7 +19,8 @@ export default function LanguageSwitcher({ className = "", onSelect }) {
     <select
       value={lang}
       onChange={handleChange}
-      className={`border border-gray-300 rounded px-2 py-1 text-sm ${className}`}
+      className={`form-select form-select-sm ${className}`}
+      style={{ width: "auto", display: "inline-block" }}
     >
       {languages.map((lng) => (
         <option key={lng.code} value={lng.code}>
