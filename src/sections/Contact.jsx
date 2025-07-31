@@ -20,17 +20,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="container contact-section section-padding">
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="h3 fw-bold text-center mb-4"
-      >
-        {t("contact.heading")}
-      </motion.h3>
-      <div className="row g-4">
+    <section id="contact" className="contact-section section-padding">
+      <div className="container">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="h3 fw-bold text-center mb-4"
+        >
+          {t("contact.heading")}
+        </motion.h3>
+        <div className="row g-4">
         <div className="col-md-6">
           <p className="d-flex align-items-center gap-2 text-body">
             <Mail size={20} /> info@mixfood.com
@@ -106,6 +107,7 @@ export default function Contact() {
             )}
           </CardContent>
           </Card>
+        </div>
         </div>
       </div>
     </section>

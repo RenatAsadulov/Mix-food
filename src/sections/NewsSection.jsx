@@ -7,16 +7,16 @@ export default function NewsSection() {
   const newsData = t("news.items");
   return (
     <section id="news" className="news-section bg-light section-padding">
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="h3 fw-bold text-center mb-4"
-      >
-        {t("news.heading")}
-      </motion.h3>
       <div className="container">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="h3 fw-bold text-center mb-4"
+        >
+          {t("news.heading")}
+        </motion.h3>
         <div className="row g-4">
           {newsData.map((item) => (
             <motion.div

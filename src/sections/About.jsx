@@ -4,22 +4,24 @@ import { useI18n } from "../i18n.jsx";
 export default function About() {
   const { t } = useI18n();
   return (
-    <section id="about" className="about-section container section-padding">
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="h3 fw-bold text-center mb-4"
-      >
-        {t("about.heading")}
-      </motion.h3>
-      <p className="fs-5 text-body mb-3">
-        {t("about.p1")}
-      </p>
-      <p className="fs-5 text-body">
-        {t("about.p2")}
-      </p>
+    <section id="about" className="about-section section-padding">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="h3 fw-bold text-center mb-4"
+            >
+              {t("about.heading")}
+            </motion.h3>
+            <p className="fs-5 text-body mb-3">{t("about.p1")}</p>
+            <p className="fs-5 text-body">{t("about.p2")}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
