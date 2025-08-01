@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto py-20 px-4">
+    <section id="contact" className="max-w-6xl mx-auto py-16 px-4 bg-gray-50">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export default function Contact() {
         {t("contact.title")}
       </motion.h3>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-3">
           <p className="flex items-center gap-3 text-gray-700">
             <Mail className="w-5 h-5" /> info@mixfood.com
           </p>
@@ -44,8 +44,8 @@ export default function Contact() {
           </p>
         </div>
 
-        <Card>
-          <CardContent className="p-6">
+        <Card className="border border-gray-200 shadow-lg">
+          <CardContent className="p-8">
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export default function Contact() {
                 <p className="text-gray-700">{t("contact.successMessage")}</p>
               </motion.div>
             ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form className="space-y-3" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">
                     {t("contact.name")}
@@ -68,7 +68,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="w-full rounded-lg border border-gray-300 p-2 focus:ring-primary focus:border-primary"
                   />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="w-full rounded-lg border border-gray-300 p-2 focus:ring-primary focus:border-primary"
                   />
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
+                    className="w-full rounded-lg border border-gray-300 p-2 focus:ring-primary focus:border-primary"
                   />
                 </div>
                 <Button type="submit" className="w-full">
