@@ -7,9 +7,9 @@ export default function Header() {
   const { t, lang, setLang } = useI18n();
 
   const navLinks = [
-    { id: "about", label: t("nav.about") },
-    { id: "news", label: t("nav.news") },
-    { id: "contact", label: t("nav.contact") },
+    { href: "/#about", label: t("nav.about") },
+    { href: "/news", label: t("nav.news") },
+    { href: "/#contact", label: t("nav.contact") },
   ];
 
   return (
@@ -19,9 +19,9 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex gap-6">
             {navLinks.map((link) => (
-              <li key={link.id}>
+              <li key={link.href}>
                 <a
-                  href={`#${link.id}`}
+                  href={link.href}
                   className="text-gray-700 hover:text-primary transition-colors"
                 >
                   {link.label}
@@ -50,9 +50,9 @@ export default function Header() {
       {open && (
         <ul className="md:hidden bg-white shadow-inner flex flex-col gap-4 p-4">
           {navLinks.map((link) => (
-            <li key={link.id}>
+            <li key={link.href}>
               <a
-                href={`#${link.id}`}
+                href={link.href}
                 className="block text-gray-700 hover:text-primary py-2"
                 onClick={() => setOpen(false)}
               >
