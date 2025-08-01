@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
-
-const navLinks = [
-  { id: "about", label: "About" },
-  { id: "news", label: "News" },
-  { id: "contact", label: "Contact" },
-];
+import { useI18n } from "../../i18n/i18n";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { t, lang, setLang } = useI18n();
+
+  const navLinks = [
+    { id: "about", label: t("nav.about") },
+    { id: "news", label: t("nav.news") },
+    { id: "contact", label: t("nav.contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -28,6 +30,15 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        <select
+          value={lang}
+          onChange={(e) => setLang(e.target.value)}
+          className="ml-4 border rounded p-1 text-sm"
+        >
+          <option value="en">🇬🇧 EN</option>
+          <option value="pl">🇵🇱 PL</option>
+          <option value="uk">🇺🇦 UA</option>
+        </select>
         <button
           className="md:hidden p-2 rounded hover:bg-gray-100"
           onClick={() => setOpen(!open)}
@@ -49,6 +60,17 @@ export default function Header() {
               </a>
             </li>
           ))}
+          <li>
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+              className="border rounded p-1 text-sm w-full"
+            >
+              <option value="en">🇬🇧 EN</option>
+              <option value="pl">🇵🇱 PL</option>
+              <option value="uk">🇺🇦 UA</option>
+            </select>
+          </li>
         </ul>
       )}
     </header>
