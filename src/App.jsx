@@ -5,7 +5,7 @@ import NewsPage from "./pages/News";
 
 export default function App() {
   return (
-    <div className="font-sans antialiased scroll-smooth">
+    <div className="font-sans antialiased scroll-smooth min-h-screen pb-24">
       <Header />
       <main>{window.location.pathname.startsWith("/news") ? <NewsPage /> : <Home />}</main>
       <Footer />
