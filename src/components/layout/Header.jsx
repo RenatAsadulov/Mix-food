@@ -35,9 +35,9 @@ export default function Header() {
           onChange={(e) => setLang(e.target.value)}
           className="ml-4 border rounded p-1 text-sm"
         >
-          <option value="en">EN</option>
-          <option value="pl">PL</option>
-          <option value="uk">UA</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="pl">🇵🇱 PL</option>
+          <option value="uk">🇺🇦 UA</option>
         </select>
         <button
           className="md:hidden p-2 rounded hover:bg-gray-100"
@@ -66,9 +66,9 @@ export default function Header() {
               onChange={(e) => setLang(e.target.value)}
               className="border rounded p-1 text-sm w-full"
             >
-              <option value="en">EN</option>
-              <option value="pl">PL</option>
-              <option value="uk">UA</option>
+              <option value="en">🇬🇧 EN</option>
+              <option value="pl">🇵🇱 PL</option>
+              <option value="uk">🇺🇦 UA</option>
             </select>
           </li>
         </ul>
