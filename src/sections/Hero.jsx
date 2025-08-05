@@ -5,20 +5,17 @@ import { useI18n } from "../i18n/i18n";
 export default function Hero() {
   const { t } = useI18n();
   return (
-    <section
-      className="bg-hero-pattern bg-cover bg-center py-24 text-center text-white"
-      id="hero"
-    >
-      <div className="backdrop-brightness-75 py-16 px-4">
+    <section id="hero" className="hero-section">
+      <div className="hero-overlay">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-extrabold mb-6"
+          className="fw-bold display-4 mb-4"
         >
           {t("hero.title")}
         </motion.h2>
-        <p className="max-w-2xl mx-auto text-lg md:text-xl mb-8">
+        <p className="mx-auto fs-5 mb-4" style={{ maxWidth: "40rem" }}>
           {t("hero.subtitle")}
         </p>
         <Button asChild size="lg">

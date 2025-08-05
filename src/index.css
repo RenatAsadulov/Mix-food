@@ -1,3 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --bs-primary: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  font-family: var(--bs-font-sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-section {
+  background-image: url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.hero-overlay {
+  backdrop-filter: brightness(0.75);
+  padding: 4rem 1rem;
+}
+
+.nav-link-hover-primary:hover {
+  color: var(--bs-primary) !important;
+}

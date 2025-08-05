@@ -12,37 +12,38 @@ export default function NewsPage() {
   const { t, lang } = useI18n();
   const newsData = t("news.items").map((item, idx) => ({ ...item, date: baseDates[idx] }));
   return (
-    <section className="max-w-6xl mx-auto py-20 px-4">
+    <section className="container py-5">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold mb-10 text-center"
+        className="fs-2 fw-bold mb-5 text-center"
       >
         {t("news.title")}
       </motion.h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="row g-4">
         {newsData.map((item) => (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <Card className="h-full">
-              <CardContent className="p-6 flex flex-col h-full">
-                <h3 className="text-xl font-semibold mb-2 flex-1">{item.title}</h3>
-                <time className="text-sm text-gray-500 mb-4 block">
-                  {new Date(item.date).toLocaleDateString(
-                    lang === "pl" ? "pl-PL" : lang === "uk" ? "uk-UA" : "en-GB",
-                    { day: "2-digit", month: "long", year: "numeric" }
-                  )}
-                </time>
-                <p className="text-gray-700 flex-1">{item.excerpt}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
+          <div key={item.title} className="col-md-6 col-lg-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
+              <Card className="h-100">
+                <CardContent className="d-flex flex-column h-100 p-4">
+                  <h3 className="fs-4 fw-semibold mb-2 flex-grow-1">{item.title}</h3>
+                  <time className="text-muted mb-3 d-block">
+                    {new Date(item.date).toLocaleDateString(
+                      lang === "pl" ? "pl-PL" : lang === "uk" ? "uk-UA" : "en-GB",
+                      { day: "2-digit", month: "long", year: "numeric" }
+                    )}
+                  </time>
+                  <p className="text-secondary flex-grow-1">{item.excerpt}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
         ))}
       </div>
     </section>
