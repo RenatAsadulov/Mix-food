@@ -1,28 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { useI18n } from "../../i18n/i18n";
+import { Link } from "react-router";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { t, lang, setLang } = useI18n();
 
+  useEffect(() => {}, [lang]);
+
   const navLinks = [
-    { id: "about", label: t("nav.about") },
-    { id: "news", label: t("nav.news") },
-    { id: "contact", label: t("nav.contact") },
+    { href: "/#about", label: t("nav.about") },
+    { href: "/news", label: t("nav.news") },
+    { href: "/contact", label: t("nav.contact") },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-        <h1 className="text-2xl font-bold text-primary">MixFood</h1>
-        <nav className="hidden md:block">
-          <ul className="flex gap-6">
+    <header className="sticky-top bg-white shadow">
+      <div className="container d-flex align-items-center justify-content-between py-3">
+        <h1 className="fs-2 fw-bold text-primary m-0">
+          <Link to="/">MixFood</Link>
+        </h1>
+        <nav className="d-none d-md-block">
+          <ul className="d-flex gap-4 list-unstyled mb-0">
             {navLinks.map((link) => (
-              <li key={link.id}>
+              <li key={link.href}>
                 <a
-                  href={`#${link.id}`}
-                  className="text-gray-700 hover:text-primary transition-colors"
+                  href={link.href}
+                  className="text-secondary nav-link-hover-primary text-decoration-none"
                 >
                   {link.label}
                 </a>
@@ -33,27 +38,27 @@ export default function Header() {
         <select
           value={lang}
           onChange={(e) => setLang(e.target.value)}
-          className="ml-4 border rounded p-1 text-sm"
+          className="form-select form-select-sm ms-3 w-auto"
         >
           <option value="en">🇬🇧 EN</option>
           <option value="pl">🇵🇱 PL</option>
           <option value="uk">🇺🇦 UA</option>
         </select>
         <button
-          className="md:hidden p-2 rounded hover:bg-gray-100"
+          className="btn btn-light d-md-none p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
         >
-          <Menu className="h-6 w-6" />
+          <Menu size={24} />
         </button>
       </div>
       {open && (
-        <ul className="md:hidden bg-white shadow-inner flex flex-col gap-4 p-4">
+        <ul className="d-md-none bg-white shadow-sm list-unstyled d-flex flex-column gap-3 p-3 mb-0">
           {navLinks.map((link) => (
-            <li key={link.id}>
+            <li key={link.href}>
               <a
-                href={`#${link.id}`}
-                className="block text-gray-700 hover:text-primary py-2"
+                href={link.href}
+                className="d-block text-secondary nav-link-hover-primary py-2 text-decoration-none"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -64,7 +69,7 @@ export default function Header() {
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value)}
-              className="border rounded p-1 text-sm w-full"
+              className="form-select form-select-sm w-100"
             >
               <option value="en">🇬🇧 EN</option>
               <option value="pl">🇵🇱 PL</option>

@@ -9,6 +9,7 @@ export default function Contact() {
   const { t } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const isMobile = navigator.userAgentData.mobile;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,92 +21,100 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto py-20 px-4">
+    <section id="contact" className="container py-5">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold mb-6 text-center"
+        className="fs-2 fw-bold mb-4 text-center"
       >
         {t("contact.title")}
       </motion.h3>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <p className="flex items-center gap-3 text-gray-700">
-            <Mail className="w-5 h-5" /> info@mixfood.com
-          </p>
-          <p className="flex items-center gap-3 text-gray-700">
-            <Phone className="w-5 h-5" /> +380 (44) 123-45-67
-          </p>
-          <p className="flex items-center gap-3 text-gray-700">
-            <MapPin className="w-5 h-5" /> Kyiv, Khreshchatyk 1
-          </p>
+      <div className="row g-4">
+        <div className="col-md-6">
+          <div className="d-flex flex-column gap-2">
+            <p className="d-flex align-items-center gap-2 text-secondary">
+              <Mail size={20} className="me-2" /> info@mixfood.com
+            </p>
+            <p className="d-flex align-items-center gap-2 text-secondary">
+              <Phone size={20} className="me-2" /> +380 (44) 123-45-67
+            </p>
+            <p className="d-flex align-items-center gap-2 text-secondary">
+              <MapPin size={20} className="me-2" /> Kyiv, Khreshchatyk 1
+            </p>
+          </div>
         </div>
 
-        <Card>
-          <CardContent className="p-6">
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center"
-              >
-                <h4 className="text-xl font-semibold mb-2">{t("contact.successTitle")}</h4>
-                <p className="text-gray-700">{t("contact.successMessage")}</p>
-              </motion.div>
-            ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    {t("contact.name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    {t("contact.email")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    {t("contact.message")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-xl border-gray-300 focus:ring-primary focus:border-primary"
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  {t("contact.send")}
-                </Button>
-              </form>
-            )}
-          </CardContent>
-        </Card>
+        <div className="col-md-6">
+          <Card className="shadow border-0">
+            <CardContent className="p-4">
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center"
+                >
+                  <h4 className="fs-4 fw-semibold mb-2">
+                    {t("contact.successTitle")}
+                  </h4>
+                  <p className="text-secondary">
+                    {t("contact.successMessage")}
+                  </p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      {t("contact.name")}
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="email" className="form-label">
+                      {t("contact.email")}
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="message" className="form-label">
+                      {t("contact.message")}
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      style={{ height: "200px" }}
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                      className="form-control"
+                    />
+                  </div>
+                  <Button type="submit" className="w-100">
+                    {t("contact.send")}
+                  </Button>
+                </form>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );

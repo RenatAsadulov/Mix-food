@@ -10,4 +10,11 @@ export default defineConfig({
       "@/sections": path.resolve(__dirname, "src/sections"),
     },
   },
+  base: "/Mix-food/",
+  build: {
+    outDir: "docs", // собираем прямо в docs/
+    emptyOutDir: true,
+  },
 });
+
+import { defineConfig } from "vite";
