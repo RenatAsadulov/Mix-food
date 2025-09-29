@@ -10,11 +10,8 @@ export default defineConfig({
       "@/sections": path.resolve(__dirname, "src/sections"),
     },
   },
-  base: "/Mix-food/",
-  build: {
-    outDir: "docs", // собираем прямо в docs/
-    emptyOutDir: true,
-  },
+  base: "/Mix-food/", // обязательно для GitHub Pages
+  build: { outDir: "dist", emptyOutDir: true },
 });
 
 import { defineConfig } from "vite";
