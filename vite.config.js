@@ -13,5 +13,3 @@ export default defineConfig({
   base: "/Mix-food/", // обязательно для GitHub Pages
   build: { outDir: "dist", emptyOutDir: true },
 });
-
-import { defineConfig } from "vite";
