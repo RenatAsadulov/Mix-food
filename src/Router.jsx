@@ -5,16 +5,19 @@ import Home from "./pages/Home.jsx";
 import NewsPage from "./pages/News.jsx";
 import { ContactForm } from "./pages/Contact.jsx";
 
-const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "news", element: <NewsPage /> },
-      { path: "contact", element: <ContactForm /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "news", element: <NewsPage /> },
+        { path: "contact", element: <ContactForm /> },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL }
+);
 
 function Layout() {
   return (
@@ -29,5 +32,5 @@ function Layout() {
 }
 
 export default function AppRouter() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} basename={import.meta.env.BASE_URL} />;
 }
