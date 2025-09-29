@@ -9,6 +9,7 @@ export default function Contact() {
   const { t } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const isMobile = navigator.userAgentData.mobile;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="container py-5 bg-light">
+    <section id="contact" className="container py-5">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +56,12 @@ export default function Contact() {
                   animate={{ opacity: 1 }}
                   className="text-center"
                 >
-                  <h4 className="fs-4 fw-semibold mb-2">{t("contact.successTitle")}</h4>
-                  <p className="text-secondary">{t("contact.successMessage")}</p>
+                  <h4 className="fs-4 fw-semibold mb-2">
+                    {t("contact.successTitle")}
+                  </h4>
+                  <p className="text-secondary">
+                    {t("contact.successMessage")}
+                  </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit}>
@@ -95,7 +100,7 @@ export default function Contact() {
                     <textarea
                       id="message"
                       name="message"
-                      rows="4"
+                      style={{ height: "200px" }}
                       value={form.message}
                       onChange={handleChange}
                       required

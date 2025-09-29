@@ -2,17 +2,16 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { useI18n } from "../i18n/i18n";
 
-const baseDates = [
-  "2025-07-15",
-  "2025-06-20",
-  "2025-05-10",
-];
+const baseDates = ["2025-07-15", "2025-06-20", "2025-05-10"];
 
 export default function NewsSection() {
   const { t, lang } = useI18n();
-  const newsData = t("news.items").map((item, idx) => ({ ...item, date: baseDates[idx] }));
+  const newsData = t("news.items").map((item, idx) => ({
+    ...item,
+    date: baseDates[idx],
+  }));
   return (
-    <section id="news" className="bg-light py-5">
+    <section id="news" className="container py-5">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +38,11 @@ export default function NewsSection() {
                     </h4>
                     <time className="text-muted mb-3 d-block">
                       {new Date(item.date).toLocaleDateString(
-                        lang === "pl" ? "pl-PL" : lang === "uk" ? "uk-UA" : "en-GB",
+                        lang === "pl"
+                          ? "pl-PL"
+                          : lang === "uk"
+                          ? "uk-UA"
+                          : "en-GB",
                         {
                           day: "2-digit",
                           month: "long",

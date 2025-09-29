@@ -19,7 +19,9 @@ export default function Hero() {
           {t("hero.subtitle")}
         </p>
         <Button asChild size="lg">
-          <a href="#contact">{t("hero.cta")}</a>
+          <a className="text-decoration-none text-light" href="#contact">
+            {t("hero.cta")}
+          </a>
         </Button>
       </div>
     </section>

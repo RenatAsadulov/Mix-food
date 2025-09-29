@@ -21,7 +21,8 @@ const translations = {
       items: [
         {
           title: "New line of natural flavorings introduced",
-          excerpt: "We expand our portfolio with flavors developed together with JAR.",
+          excerpt:
+            "We expand our portfolio with flavors developed together with JAR.",
         },
         {
           title: "Direct deliveries from Poland established",
@@ -122,7 +123,7 @@ const translations = {
         {
           title: "Співпраця з лідерами ринку",
           excerpt:
-            'Компанії «Лев» та «Ласунка» довіряють MixFood постачання інгредієнтів.',
+            "Компанії «Лев» та «Ласунка» довіряють MixFood постачання інгредієнтів.",
         },
       ],
     },
@@ -139,15 +140,30 @@ const translations = {
   },
 };
 
-const I18nContext = createContext({ lang: "en", setLang: () => {}, t: (key) => key });
+const I18nContext = createContext({
+  lang: "en",
+  setLang: () => {},
+  t: (key) => key,
+});
 
 function getNested(obj, path) {
-  return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj);
+  return path
+    .split(".")
+    .reduce(
+      (acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined),
+      obj
+    );
 }
 
 export function I18nProvider({ children }) {
-  const [lang, setLang] = useState("en");
-  const t = (key) => getNested(translations[lang], key) || getNested(translations.en, key) || key;
+  const userLanguage = navigator.language.slice(0, 2);
+  console.log("userLanguage:", userLanguage);
+
+  const [lang, setLang] = useState(userLanguage);
+  const t = (key) =>
+    getNested(translations[lang], key) ||
+    getNested(translations.en, key) ||
+    key;
   return (
     <I18nContext.Provider value={{ lang, setLang, t }}>
       {children}

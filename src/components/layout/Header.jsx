@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { useI18n } from "../../i18n/i18n";
+import { Link } from "react-router";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { t, lang, setLang } = useI18n();
 
+  useEffect(() => {}, [lang]);
+
   const navLinks = [
     { href: "/#about", label: t("nav.about") },
     { href: "/news", label: t("nav.news") },
-    { href: "/#contact", label: t("nav.contact") },
+    { href: "/contact", label: t("nav.contact") },
   ];
 
   return (
     <header className="sticky-top bg-white shadow">
       <div className="container d-flex align-items-center justify-content-between py-3">
-        <h1 className="fs-2 fw-bold text-primary m-0">MixFood</h1>
+        <h1 className="fs-2 fw-bold text-primary m-0">
+          <Link to="/">MixFood</Link>
+        </h1>
         <nav className="d-none d-md-block">
           <ul className="d-flex gap-4 list-unstyled mb-0">
             {navLinks.map((link) => (
