@@ -4,12 +4,13 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "../i18n/i18n";
+import { detectMobile } from "../utils/detectMobile";
 
 export default function Contact() {
   const { t } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-  const isMobile = navigator.userAgentData.mobile;
+  const isMobile = detectMobile();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
