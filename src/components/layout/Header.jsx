@@ -65,17 +65,6 @@ export default function Header() {
               </a>
             </li>
           ))}
-          <li>
-            <select
-              value={lang}
-              onChange={(e) => setLang(e.target.value)}
-              className="form-select form-select-sm w-100"
-            >
-              <option value="en">🇬🇧 EN</option>
-              <option value="pl">🇵🇱 PL</option>
-              <option value="uk">🇺🇦 UA</option>
-            </select>
-          </li>
         </ul>
       )}
     </header>
