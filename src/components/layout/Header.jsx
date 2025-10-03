@@ -10,7 +10,7 @@ export default function Header() {
   useEffect(() => {}, [lang]);
 
   const navLinks = [
-    { href: "/", label: t("nav.about") },
+    { href: import.meta.env.BASE_URL, label: t("nav.about") },
     { href: "news", label: t("nav.news") },
     { href: "contact", label: t("nav.contact") },
   ];
