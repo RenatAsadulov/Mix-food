@@ -2,8 +2,12 @@ name: Deploy Client
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: deploy-client
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -17,7 +21,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        # Vite -> dist/ ; если CRA — поменяй ниже на build/
+        run: npm run build
 
       - name: Setup SSH (decode base64)
         run: |
@@ -26,43 +37,34 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
 
-
-      - name: Install deps
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      # Подготовка SSH
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          # чтобы не спрашивал про fingerprint
-          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
-
-      # Зальём билд атомарно: в client_new, затем swap
       - name: Rsync upload to temp dir
         run: |
-          rsync -az --delete --progress ./build/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
+          # Создаём временную папку на сервере и заливаем dist/
+          rsync -az --delete --progress \
+            -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            --rsync-path="mkdir -p /var/www/mixfood/client_new && rsync" \
+            ./dist/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
+
+      - name: Rsync (debug on failure)
+        if: failure()
+        run: |
+          rsync -azv --delete \
+            -e "ssh -vvv -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            --rsync-path="mkdir -p /var/www/mixfood/client_new && rsync" \
+            ./dist/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
 
       - name: Atomic swap
         run: |
-          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-            set -e
-            TARGET="${{ secrets.VPS_PATH }}"
+          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes root@${{ secrets.VPS_HOST }} << 'EOF'
+            set -euo pipefail
+            TARGET="/var/www/mixfood/client"
             NEW="/var/www/mixfood/client_new"
             OLD="/var/www/mixfood/client_old"
 
-            # гарантия, что каталог назначения существует
             mkdir -p "$TARGET"
-            # удаляем прошлый OLD, если был
             rm -rf "$OLD"
-            # переименовываем текущий в OLD
             mv "$TARGET" "$OLD" || true
-            # перекидываем новый на место
             mv "$NEW" "$TARGET"
-            # (опционально) чистим кэш Nginx/перечитываем конфиг
-            sudo systemctl reload nginx || true
+
+            systemctl reload nginx || true
           EOF
