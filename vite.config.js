@@ -12,6 +12,6 @@ export default defineConfig({
       "@/sections": path.resolve(__dirname, "src/sections"),
     },
   },
-  base: process.env.NODE_ENV === "production" ? "/Mix-food/" : "/", // обязательно для GitHub Pages
+  base: process.env.NODE_ENV === "production" ? "/" : "/", // обязательно для GitHub Pages
   build: { outDir: "dist", emptyOutDir: true },
 });
