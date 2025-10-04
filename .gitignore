@@ -1,2 +1,4 @@
 node_modules
 dist
+gh_actions_deploy_key
+gh_actions_deploy_key.pub

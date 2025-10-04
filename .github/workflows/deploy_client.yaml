@@ -1,0 +1,60 @@
+name: Deploy Client
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Подготовка SSH
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # чтобы не спрашивал про fingerprint
+          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      # Зальём билд атомарно: в client_new, затем swap
+      - name: Rsync upload to temp dir
+        run: |
+          rsync -az --delete --progress ./build/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
+
+      - name: Atomic swap
+        run: |
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            set -e
+            TARGET="${{ secrets.VPS_PATH }}"
+            NEW="/var/www/mixfood/client_new"
+            OLD="/var/www/mixfood/client_old"
+
+            # гарантия, что каталог назначения существует
+            mkdir -p "$TARGET"
+            # удаляем прошлый OLD, если был
+            rm -rf "$OLD"
+            # переименовываем текущий в OLD
+            mv "$TARGET" "$OLD" || true
+            # перекидываем новый на место
+            mv "$NEW" "$TARGET"
+            # (опционально) чистим кэш Nginx/перечитываем конфиг
+            sudo systemctl reload nginx || true
+          EOF
