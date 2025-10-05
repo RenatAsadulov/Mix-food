@@ -4,8 +4,6 @@ import NewsSection from "@/sections/NewsSection";
 import Contact from "@/sections/Contact";
 
 export default function Home() {
-  console.log("Lets test it", new Date());
-
   return (
     <>
       <Hero />

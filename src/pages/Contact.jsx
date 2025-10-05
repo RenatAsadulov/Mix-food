@@ -1,88 +1,174 @@
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "../i18n/i18n";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { ContactInfo } from "../components/features/contact-info/ContactInfo";
 
 export const ContactForm = () => {
   const { t } = useI18n();
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const emailRef = useRef(null);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm((s) => ({ ...s, [name]: value }));
+    if (name === "email") {
+      setEmailError("");
+    }
   };
+
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email.trim());
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // валидация email
+    if (!isValidEmail(form.email)) {
+      setEmailError(t("contact.emailInvalid", "Некоректний email"));
+      // фокус на поле для UX/а11y
+      emailRef.current?.focus();
+      return;
+    }
+
+    // функциональность оставляем как есть
     setSubmitted(true);
   };
 
   return (
-    <div className="col-md-6 flex justify-center">
-      <CardContent className="shadow border-0">
-        <CardContent className="p-4">
-          {submitted ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center"
-            >
-              <h4 className="fs-4 fw-semibold mb-2">
-                {t("contact.successTitle")}
-              </h4>
-              <p className="text-secondary">{t("contact.successMessage")}</p>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">
-                  {t("contact.name")}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  {t("contact.email")}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label">
-                  {t("contact.message")}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  className="form-control"
-                />
-              </div>
-              <Button type="submit" className="w-100">
-                {t("contact.send")}
-              </Button>
-            </form>
-          )}
-        </CardContent>
-      </CardContent>
-    </div>
+    <section id="contact" aria-labelledby="contact-title" className="py-4">
+      <div className="container my-5">
+        <div className="col-12 col-md-10 col-lg-6 mx-auto d-flex flex-column align-items-center">
+          <header className="w-100 text-center mb-3">
+            <h1 id="contact-title" className="h2 m-0">
+              {t("contact.title")}
+            </h1>
+            <p className="text-secondary mt-2 mb-0">
+              {t(
+                "contact.lead",
+                "Заповніть форму або скористайтеся контактними даними — ми відповімо впродовж робочого дня."
+              )}
+            </p>
+          </header>
+          <div className="row justify-content-center gap-5">
+            <div className="col-7col-lg-6 mb-5">
+              <Card className="w-100 shadow border-0">
+                <CardContent className="p-4">
+                  {submitted ? (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center"
+                    >
+                      <h4 className="fs-4 fw-semibold mb-2">
+                        {t("contact.successTitle")}
+                      </h4>
+                      <p className="text-secondary mb-0">
+                        {t("contact.successMessage")}
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <form
+                      noValidate
+                      onSubmit={handleSubmit}
+                      aria-describedby="contact-help"
+                    >
+                      {/* скрытый honeypot (простой антиспам, не влияет на функциональность) */}
+                      <input
+                        type="text"
+                        name="_hp"
+                        tabIndex="-1"
+                        autoComplete="off"
+                        className="position-absolute opacity-0"
+                        aria-hidden="true"
+                      />
+
+                      <div className="mb-3">
+                        <label htmlFor="name" className="form-label">
+                          {t("contact.name")}
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={form.name}
+                          onChange={handleChange}
+                          className="form-control"
+                          autoComplete="name"
+                        />
+                      </div>
+
+                      <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                          {t("contact.email")}
+                        </label>
+                        <input
+                          ref={emailRef}
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={form.email}
+                          onChange={handleChange}
+                          className={`form-control${
+                            emailError ? " is-invalid" : ""
+                          }`}
+                          autoComplete="email"
+                          inputMode="email"
+                          aria-invalid={emailError ? "true" : "false"}
+                          aria-describedby={
+                            emailError ? "emailError" : undefined
+                          }
+                        />
+                        {emailError && (
+                          <div
+                            id="emailError"
+                            className="invalid-feedback d-block"
+                          >
+                            {emailError}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mb-3">
+                        <label htmlFor="message" className="form-label">
+                          {t("contact.message")}
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows={4}
+                          value={form.message}
+                          onChange={handleChange}
+                          className="form-control"
+                          autoComplete="off"
+                        />
+                      </div>
+
+                      <Button type="submit" className="w-100">
+                        {t("contact.send")}
+                      </Button>
+
+                      <p id="contact-help" className="form-text mt-2 mb-0">
+                        {t(
+                          "contact.privacyNote",
+                          "Надсилаючи форму, ви погоджуєтесь на обробку персональних даних для відповіді на запит."
+                        )}
+                      </p>
+                    </form>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+            <div className="col-5 col-lg-4">
+              <ContactInfo />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

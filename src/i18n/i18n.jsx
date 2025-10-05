@@ -1,3 +1,4 @@
+import { Quote } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
 
 const translations = {
@@ -39,11 +40,14 @@ const translations = {
     contact: {
       title: "Contact us",
       successTitle: "Thank you!",
+      lead: "The MixFood team provides technical support and assists in selecting flavorings, extracts, and food additives for your production needs. Fill out the form, and our specialist will contact you to discuss cooperation details.",
       successMessage: "We will contact you soon.",
       name: "Name",
       email: "Email",
       message: "Message",
       send: "Send",
+      privacyNote:
+        "By submitting this form, you consent to the processing of your personal data for communication and preparation of a commercial offer.",
     },
     footer: { rights: "All rights reserved." },
   },
@@ -84,11 +88,15 @@ const translations = {
     contact: {
       title: "Skontaktuj się z nami",
       successTitle: "Dziękujemy!",
+      lead: "Zespół MixFood oferuje wsparcie techniczne i pomaga w doborze aromatów, ekstraktów oraz dodatków spożywczych dla Twojej produkcji. Wypełnij formularz, a nasz specjalista skontaktuje się z Tobą, aby omówić szczegóły współpracy.",
       successMessage: "Skontaktujemy się wkrótce.",
       name: "Imię",
       email: "Email",
       message: "Wiadomość",
       send: "Wyślij",
+      privacyNote: "na. Nasz menedżer wkrótce się z Tobą skontaktuje.",
+      privacyNote:
+        "Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu i przygotowania oferty handlowej.",
     },
     footer: { rights: "Wszelkie prawa zastrzeżone." },
   },
@@ -130,11 +138,14 @@ const translations = {
     contact: {
       title: "Зв'яжіться з нами",
       successTitle: "Дякуємо!",
+      lead: "Команда MixFood надає технічну підтримку та допомагає у виборі ароматизаторів, екстрактів і харчових добавок для вашого виробництва. Заповніть форму, і наш фахівець зв’яжеться з вами для уточнення деталей співпраці.",
       successMessage: "Ми зв'яжемося з вами найближчим часом.",
       name: "Ім'я",
       email: "Ел. пошта",
       message: "Повідомлення",
       send: "Надіслати",
+      privacyNote:
+        "Надсилаючи форму, ви погоджуєтесь на обробку персональних даних з метою комунікації та підготовки комерційної пропозиції.",
     },
     footer: { rights: "Всі права захищені." },
   },
@@ -157,7 +168,6 @@ function getNested(obj, path) {
 
 export function I18nProvider({ children }) {
   const userLanguage = navigator.language.slice(0, 2);
-  console.log("userLanguage:", userLanguage);
 
   const [lang, setLang] = useState(userLanguage);
   const t = (key) =>
