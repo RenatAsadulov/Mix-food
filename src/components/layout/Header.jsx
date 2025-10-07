@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="sticky-top bg-white shadow">
-      <div className="container d-flex align-items-center justify-content-between py-3">
+      <div className="container d-flex align-items-center justify-content-between py-2">
         <h1 className="fs-2 fw-bold text-primary m-0">
           <Link to="/">MixFood</Link>
         </h1>
