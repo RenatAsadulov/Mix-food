@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "../i18n/i18n";
 import { useRef, useState } from "react";
 import { ContactInfo } from "../components/features/contact-info/ContactInfo";
+import { div } from "framer-motion/client";
 
 export const ContactForm = () => {
   const { t } = useI18n();
@@ -41,37 +42,39 @@ export const ContactForm = () => {
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="py-4">
-      <div className="container my-5">
-        <div className="col-12 col-md-10 col-lg-6 mx-auto d-flex flex-column align-items-center">
+      <div className="container my-2">
+        <div className="w-75 col-12 col-md-10 col-lg-6 mx-auto d-flex flex-column align-items-center">
           <header className="w-100 text-center mb-3">
             <h1 id="contact-title" className="h2 m-0">
               {t("contact.title")}
             </h1>
-            <p className="text-secondary mt-2 mb-0">
+            <p className="w-75 mx-auto text-secondary mt-2 mb-0">
               {t(
                 "contact.lead",
                 "Заповніть форму або скористайтеся контактними даними — ми відповімо впродовж робочого дня."
               )}
             </p>
           </header>
-          <div className="row justify-content-center gap-5">
-            <div className="col-7col-lg-6 mb-5">
-              <Card className="w-100 shadow border-0">
-                <CardContent className="p-4">
-                  {submitted ? (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="text-center"
-                    >
-                      <h4 className="fs-4 fw-semibold mb-2">
-                        {t("contact.successTitle")}
-                      </h4>
-                      <p className="text-secondary mb-0">
-                        {t("contact.successMessage")}
-                      </p>
-                    </motion.div>
-                  ) : (
+          {submitted ? (
+            <div className="mt-4 shadow border-0 p-5 rounded">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center"
+              >
+                <h4 className="fs-4 fw-semibold mb-2">
+                  {t("contact.successTitle")}
+                </h4>
+                <p className="text-secondary mb-0">
+                  {t("contact.successMessage")}
+                </p>
+              </motion.div>
+            </div>
+          ) : (
+            <div className="row justify-content-center mt-4">
+              <div className="col-12 col-lg-8 mb-6">
+                <Card className="w-100 shadow border-0">
+                  <CardContent className="p-4">
                     <form
                       noValidate
                       onSubmit={handleSubmit}
@@ -159,14 +162,11 @@ export const ContactForm = () => {
                         )}
                       </p>
                     </form>
-                  )}
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
-            <div className="col-5 col-lg-4">
-              <ContactInfo />
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-secondary nav-link-hover-primary text-decoration-none text-success"
+                  className="text-secondary nav-link-hover-primary text-decoration-none text-success fs-5 fw-medium"
                 >
                   {link.label}
                 </a>
