@@ -22,7 +22,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="container py-5">
+    <section id="contact" className="container pb-5 pt-3">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -36,14 +36,25 @@ export default function Contact() {
       <div className="row g-4">
         <div className="col-md-6">
           <div className="d-flex flex-column gap-2">
-            <p className="d-flex align-items-center gap-2 text-secondary">
-              <Mail size={20} className="me-2" /> info@mixfood.com
+            <p className="d-flex align-items-start gap-2 text-secondary">
+              <Mail size={20} className="me-2" />{" "}
+              <p className="m-0 p-0">
+                <a
+                  href="mailto:office.mixfood@gmail.com"
+                  className="text-decoration-none text-dark"
+                >
+                  office.mixfood@gmail.com
+                </a>
+              </p>
             </p>
-            <p className="d-flex align-items-center gap-2 text-secondary">
-              <Phone size={20} className="me-2" /> +380 (44) 123-45-67
-            </p>
-            <p className="d-flex align-items-center gap-2 text-secondary">
-              <MapPin size={20} className="me-2" /> Kyiv, Khreshchatyk 1
+            <p className="d-flex align-items-start gap-2 text-secondary">
+              <Phone size={20} className="me-2" />{" "}
+              <a
+                href="tel:+380987654321"
+                className="text-decoration-none text-dark"
+              >
+                +38 (098) 765-43-21
+              </a>
             </p>
           </div>
         </div>

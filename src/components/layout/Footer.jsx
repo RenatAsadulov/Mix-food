@@ -37,16 +37,16 @@ export default function Footer() {
 
   return (
     <footer className="d-flex justify-content-around bg-dark text-light py-3 text-center fixed-bottom">
-      <p>
+      <p className="m-0 p-0">
         <i className="fa-solid fa-phone text-white me-2"></i>{" "}
         <a href="tel:+380987654321" className="text-decoration-none text-white">
           +38 (098) 765-43-21
         </a>
       </p>
-      <p>
+      <p className="m-0 p-0">
         © {new Date().getFullYear()} MixFood. {t("footer.rights")}
       </p>
-      <p>
+      <p className="m-0 p-0">
         <i className="fa-solid fa-envelope text-white me-2"></i>{" "}
         <a
           href="mailto:office.mixfood@gmail.com"
