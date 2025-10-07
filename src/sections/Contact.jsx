@@ -22,7 +22,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="container pb-5 pt-3">
+    <section id="contact" className="container py-5">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
