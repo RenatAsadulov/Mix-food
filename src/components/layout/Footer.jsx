@@ -9,7 +9,7 @@ export default function Footer() {
 
   if (isMobide) {
     return (
-      <footer className="bg-dark text-light py-3 text-center fixed-bottom">
+      <footer className="bg-dark text-light py-2 text-center fixed-bottom">
         <span className="me-3">
           <i className="fa-solid fa-phone text-white"></i>{" "}
           <a
