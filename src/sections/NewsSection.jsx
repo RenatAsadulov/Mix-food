@@ -11,7 +11,7 @@ export default function NewsSection() {
     date: baseDates[idx],
   }));
   return (
-    <section id="news" className="container py-5">
+    <section id="news" className="container py-3">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
