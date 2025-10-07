@@ -7,7 +7,7 @@ export default function Footer() {
 
   console.log(isMobide);
 
-  if (!isMobide) {
+  if (isMobide) {
     return (
       <footer className="bg-dark text-light py-3 text-center fixed-bottom">
         <span className="me-3">
