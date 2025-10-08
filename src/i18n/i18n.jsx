@@ -49,8 +49,6 @@ const translations = {
       send: "Send",
       privacyNote:
         "By submitting this form, you consent to the processing of your personal data for communication and preparation of a commercial offer.",
-      email: "Email",
-      phone: "Phone",
     },
     footer: { rights: "All rights reserved." },
   },
@@ -97,11 +95,8 @@ const translations = {
       email: "Email",
       message: "Wiadomość",
       send: "Wyślij",
-      privacyNote: "na. Nasz menedżer wkrótce się z Tobą skontaktuje.",
       privacyNote:
         "Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu i przygotowania oferty handlowej.",
-      email: "",
-      phone: "",
     },
     footer: { rights: "Wszelkie prawa zastrzeżone." },
   },
@@ -151,8 +146,6 @@ const translations = {
       send: "Надіслати",
       privacyNote:
         "Надсилаючи форму, ви погоджуєтесь на обробку персональних даних з метою комунікації та підготовки комерційної пропозиції.",
-      email: "Ел. пошта",
-      phone: "Телефон",
     },
     footer: { rights: "Всі права захищені." },
   },
