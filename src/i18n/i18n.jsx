@@ -168,8 +168,11 @@ function getNested(obj, path) {
 
 export function I18nProvider({ children }) {
   const userLanguage = getLanguageFromBrowserSettings();
+  const languageFromLS = localStorage.getItem("lang");
 
-  const [lang, setLang] = useState(userLanguage);
+  const userLng = languageFromLS ?? userLanguage;
+
+  const [lang, setLang] = useState(userLng);
   const t = (key) =>
     getNested(translations[lang], key) ||
     getNested(translations.en, key) ||

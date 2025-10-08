@@ -7,6 +7,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { t, lang, setLang } = useI18n();
 
+  const setUserLanguage = (lang) => {
+    localStorage.setItem("lang", lang);
+    setLang(lang);
+  };
+
   useEffect(() => {}, [lang]);
 
   const navLinks = [
@@ -37,7 +42,7 @@ export default function Header() {
         </nav>
         <select
           value={lang}
-          onChange={(e) => setLang(e.target.value)}
+          onChange={(e) => setUserLanguage(e.target.value)}
           className="form-select form-select-sm ms-3 w-auto"
         >
           <option value="en">🇬🇧 EN</option>
