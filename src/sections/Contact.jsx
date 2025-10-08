@@ -137,35 +137,37 @@ export default function Contact() {
           </div>
         </div>
       ) : (
-        <div className="d-flex justify-content-around">
+        <div className="d-flex flex-column p-4 align-items-center">
           <div className="">
             <div className="col-md-6">
-              <div className="d-flex flex-column gap-2">
-                <p className="d-flex align-items-start gap-2 text-secondary">
-                  <Mail size={20} className="me-2" />
-                  <p className="m-0 p-0">
+              <div className="d-flex flex-column align-items-center gap-2">
+                <div>
+                  <p className="d-flex align-items-start gap-2 text-secondary">
+                    <Mail size={20} className="me-2" />
+                    <p className="m-0 p-0">
+                      <a
+                        href="mailto:office.mixfood@gmail.com"
+                        className="text-decoration-none text-dark"
+                      >
+                        office.mixfood@gmail.com
+                      </a>
+                    </p>
+                  </p>
+                  <p className="d-flex align-items-start gap-2 text-secondary">
+                    <Phone size={20} className="me-2" />{" "}
                     <a
-                      href="mailto:office.mixfood@gmail.com"
+                      href="tel:+380987654321"
                       className="text-decoration-none text-dark"
                     >
-                      office.mixfood@gmail.com
+                      +38 (098) 765-43-21
                     </a>
                   </p>
-                </p>
-                <p className="d-flex align-items-start gap-2 text-secondary">
-                  <Phone size={20} className="me-2" />{" "}
-                  <a
-                    href="tel:+380987654321"
-                    className="text-decoration-none text-dark"
-                  >
-                    +38 (098) 765-43-21
-                  </a>
-                </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="">
+          <div style={{ width: "50vw" }}>
             <Card className="shadow border-0">
               <CardContent className="p-4">
                 {submitted ? (
