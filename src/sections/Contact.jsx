@@ -47,7 +47,7 @@ export default function Contact() {
         {t("contact.title")}
       </motion.h3>
 
-      <button>Click me</button>
+      <button onClick={makeRequest}>Click me</button>
 
       {isMobile ? (
         <div>
