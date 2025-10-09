@@ -3,27 +3,51 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "../i18n/i18n";
 import { useRef, useState } from "react";
-import { ContactInfo } from "../components/features/contact-info/ContactInfo";
-import { div } from "framer-motion/client";
 
 export const ContactForm = () => {
   const { t } = useI18n();
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
   const emailRef = useRef(null);
+  const phoneRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log("name", name);
+    console.log("value", value);
     setForm((s) => ({ ...s, [name]: value }));
     if (name === "email") {
       setEmailError("");
+    }
+    if (name === "phone") {
+      setPhoneError("");
     }
   };
 
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email.trim());
+
+  const isValidPhone = (phone) => {
+    if (typeof phone !== "string") return false;
+
+    const cleaned = phone.trim().replace(/[\s().-]/g, "");
+
+    if (!/^\+?\d+$/.test(cleaned)) return false;
+
+    if (cleaned.startsWith("+")) {
+      return /^\+[1-9]\d{6,14}$/.test(cleaned);
+    }
+
+    return /^\d{7,12}$/.test(cleaned);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,12 +55,17 @@ export const ContactForm = () => {
     // валидация email
     if (!isValidEmail(form.email)) {
       setEmailError(t("contact.emailInvalid", "Некоректний email"));
-      // фокус на поле для UX/а11y
       emailRef.current?.focus();
       return;
     }
 
-    // функциональность оставляем как есть
+    // валидация phone
+    if (!isValidPhone(form.phone)) {
+      setPhoneError(t("contact.phoneInvalid"));
+      phoneRef?.current?.focus();
+      return;
+    }
+
     setSubmitted(true);
   };
 
@@ -132,6 +161,37 @@ export const ContactForm = () => {
                             className="invalid-feedback d-block"
                           >
                             {emailError}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                          {t("contact.email")}
+                        </label>
+                        <input
+                          ref={phoneRef}
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                          value={form.phone}
+                          onChange={handleChange}
+                          className={`form-control${
+                            phoneError ? " is-invalid" : ""
+                          }`}
+                          autoComplete="tel-national"
+                          aria-invalid={phoneError ? "true" : "false"}
+                          aria-describedby={
+                            phoneError ? "phoneError" : undefined
+                          }
+                        />
+                        {phoneError && (
+                          <div
+                            id="phoneError"
+                            className="invalid-feedback d-block"
+                          >
+                            {phoneError}
                           </div>
                         )}
                       </div>

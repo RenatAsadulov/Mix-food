@@ -49,6 +49,9 @@ const translations = {
       send: "Send",
       privacyNote:
         "By submitting this form, you consent to the processing of your personal data for communication and preparation of a commercial offer.",
+      emailInvalid: "Enter email in format your_email@test.com",
+      phoneInvalid:
+        "Please enter a valid phone number in international format, e.g. +44 20 1234 5678.",
     },
     footer: { rights: "All rights reserved." },
   },
@@ -97,6 +100,9 @@ const translations = {
       send: "Wyślij",
       privacyNote:
         "Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu i przygotowania oferty handlowej.",
+      emailInvalid: "Wpisz adres e-mail w formacie your_email@test.com",
+      phoneInvalid:
+        "Wprowadź poprawny numer telefonu w formacie międzynarodowym, np. +48 501 234 567.",
     },
     footer: { rights: "Wszelkie prawa zastrzeżone." },
   },
@@ -146,6 +152,9 @@ const translations = {
       send: "Надіслати",
       privacyNote:
         "Надсилаючи форму, ви погоджуєтесь на обробку персональних даних з метою комунікації та підготовки комерційної пропозиції.",
+      emailInvalid: "Введіть електронну пошту в форматі your_email@test.com",
+      phoneInvalid:
+        "Введіть правильний номер телефону у міжнародному форматі, наприклад, +380 50 123 4567.",
     },
     footer: { rights: "Всі права захищені." },
   },
