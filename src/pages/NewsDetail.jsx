@@ -47,7 +47,8 @@ export default function NewsDetail() {
   }
 
   const publishedAt = formatNewsDate(article.date, locale);
-  const closeLabel = lang === "pl" ? "Zamknij" : lang === "uk" ? "Закрити" : "Close";
+  const closeLabel =
+    lang === "pl" ? "Zamknij" : lang === "uk" ? "Закрити" : "Close";
   const backLabel = lang === "pl" ? "Powrót" : lang === "uk" ? "Назад" : "Back";
 
   const articleBody = (
@@ -90,7 +91,9 @@ export default function NewsDetail() {
                   onClick={handleClose}
                 />
               </div>
-              <div className="modal-body px-4 pb-5 overflow-auto">{articleBody}</div>
+              <div className="modal-body px-4 pb-5 overflow-auto">
+                {articleBody}
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +105,11 @@ export default function NewsDetail() {
     <article className="py-5">
       <div className="bg-white shadow-sm rounded-4 p-4 p-lg-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <button type="button" className="btn btn-outline-success" onClick={handleClose}>
+          <button
+            type="button"
+            className="btn btn-outline-success"
+            onClick={handleClose}
+          >
             {backLabel}
           </button>
           <time className="text-muted">{publishedAt}</time>
@@ -111,16 +118,14 @@ export default function NewsDetail() {
         <p className="lead text-secondary mb-4">{article.excerpt}</p>
         <div className="row gy-4 align-items-start">
           <div className="col-lg-7">
-            <p className="mb-3">{article.excerpt}</p>
             <blockquote className="blockquote border-start border-4 border-success ps-3 mb-4">
               <p className="mb-0">{article.title}</p>
             </blockquote>
-            <p className="mb-0 text-muted">{article.excerpt}</p>
           </div>
           <div className="col-lg-5">
-            <div className="ratio ratio-4x3 rounded-4 overflow-hidden bg-success bg-opacity-10 d-flex align-items-center justify-content-center">
+            {/* <div className="ratio ratio-4x3 rounded-4 overflow-hidden bg-success bg-opacity-10 d-flex align-items-center justify-content-center">
               <span className="text-success fw-semibold text-uppercase">MixFood</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
