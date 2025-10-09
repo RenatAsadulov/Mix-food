@@ -22,6 +22,19 @@ export default function Contact() {
     setSubmitted(true);
   };
 
+  const makeRequest = async () => {
+    const response = await fetch("https://mixfood.in.ua/api/contact", {
+      method: "POST",
+      body: JSON.stringify({
+        name: "HUESOS",
+        email: "HUESOS",
+        phone: "PIDORAS",
+      }),
+    });
+
+    console.log("response", response);
+  };
+
   return (
     <section id="contact" className="container py-5">
       <motion.h3
@@ -33,6 +46,8 @@ export default function Contact() {
       >
         {t("contact.title")}
       </motion.h3>
+
+      <button>Click me</button>
 
       {isMobile ? (
         <div>
