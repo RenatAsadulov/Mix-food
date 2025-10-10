@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { useI18n } from "../i18n/i18n";
-
-const baseDates = ["2025-07-15", "2025-06-20", "2025-05-10"];
+import { getNewsItems, formatNewsDate } from "../utils/news";
 
 export default function NewsSection() {
   const { t, lang } = useI18n();
-  const newsData = t("news.items").map((item, idx) => ({
-    ...item,
-    date: baseDates[idx],
-  }));
+  const newsData = getNewsItems(t("news.items"));
+  const locale = lang === "pl" ? "pl-PL" : lang === "uk" ? "uk-UA" : "en-GB";
+  const readMoreLabel =
+    lang === "pl" ? "Czytaj więcej" : lang === "uk" ? "Детальніше" : "Read more";
   return (
     <section id="news" className="container py-3">
       <motion.h3
@@ -24,33 +24,28 @@ export default function NewsSection() {
       <div className="container">
         <div className="row g-4">
           {newsData.map((item) => (
-            <div key={item.title} className="col-md-6 col-lg-4">
+            <div key={item.slug} className="col-md-6 col-lg-4 d-flex">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <Card className="h-100">
+                <Card className="h-100 w-100 position-relative">
                   <CardContent className="d-flex flex-column h-100 p-4">
                     <h4 className="fs-4 fw-semibold mb-2 flex-grow-1">
                       {item.title}
                     </h4>
                     <time className="text-muted mb-3 d-block">
-                      {new Date(item.date).toLocaleDateString(
-                        lang === "pl"
-                          ? "pl-PL"
-                          : lang === "uk"
-                          ? "uk-UA"
-                          : "en-GB",
-                        {
-                          day: "2-digit",
-                          month: "long",
-                          year: "numeric",
-                        }
-                      )}
+                      {formatNewsDate(item.date, locale)}
                     </time>
                     <p className="text-secondary flex-grow-1">{item.excerpt}</p>
+                    <Link
+                      to={`/news/${item.slug}`}
+                      className="stretched-link mt-3 text-decoration-none fw-semibold text-primary"
+                    >
+                      {readMoreLabel}
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
