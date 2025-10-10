@@ -24,14 +24,14 @@ export default function NewsSection() {
       <div className="container">
         <div className="row g-4">
           {newsData.map((item) => (
-            <div key={item.slug} className="col-md-6 col-lg-4">
+            <div key={item.slug} className="col-md-6 col-lg-4 d-flex">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <Card className="h-100 position-relative">
+                <Card className="h-100 w-100 position-relative">
                   <CardContent className="d-flex flex-column h-100 p-4">
                     <h4 className="fs-4 fw-semibold mb-2 flex-grow-1">
                       {item.title}
