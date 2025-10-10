@@ -31,8 +31,6 @@ export default function Contact() {
         phone: "PIDORAS",
       }),
     });
-
-    console.log("response", response);
   };
 
   return (
@@ -47,12 +45,10 @@ export default function Contact() {
         {t("contact.title")}
       </motion.h3>
 
-      <button onClick={makeRequest}>Click me</button>
-
       {isMobile ? (
         <div>
           <div className="justify-self-center">
-            <div className="d-flex align-items-center flex-column gap-2">
+            <div className="d-flex align-items-center fle/x-column gap-2">
               <div>
                 <p className="d-flex align-items-start gap-2 text-secondary">
                   <Mail size={20} className="me-2" />
