@@ -167,7 +167,7 @@ export const ContactForm = () => {
 
                       <div className="mb-3">
                         <label htmlFor="email" className="form-label">
-                          {t("contact.email")}
+                          {t("contact.phone")}
                         </label>
                         <input
                           ref={phoneRef}

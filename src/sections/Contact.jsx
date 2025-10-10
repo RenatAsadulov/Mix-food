@@ -172,7 +172,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div style={{ width: "50vw" }}>
+          <div style={{ width: "40vw" }}>
             <Card className="shadow border-0">
               <CardContent className="p-4">
                 {submitted ? (

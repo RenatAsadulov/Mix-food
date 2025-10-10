@@ -44,7 +44,8 @@ const translations = {
       lead: "The MixFood team provides technical support and assists in selecting flavorings, extracts, and food additives for your production needs. Fill out the form, and our specialist will contact you to discuss cooperation details.",
       successMessage: "We will contact you soon.",
       name: "Name",
-      email: "Email",
+      email: "E-mail",
+      phone: "Phone",
       message: "Message",
       send: "Send",
       privacyNote:
@@ -95,7 +96,8 @@ const translations = {
       lead: "Zespół MixFood oferuje wsparcie techniczne i pomaga w doborze aromatów, ekstraktów oraz dodatków spożywczych dla Twojej produkcji. Wypełnij formularz, a nasz specjalista skontaktuje się z Tobą, aby omówić szczegóły współpracy.",
       successMessage: "Skontaktujemy się wkrótce.",
       name: "Imię",
-      email: "Email",
+      email: "E-mail",
+      phone: "Numer telefonu",
       message: "Wiadomość",
       send: "Wyślij",
       privacyNote:
@@ -148,6 +150,7 @@ const translations = {
       successMessage: "Ми зв'яжемося з вами найближчим часом.",
       name: "Ім'я",
       email: "Ел. пошта",
+      phone: "Телефон",
       message: "Повідомлення",
       send: "Надіслати",
       privacyNote:
