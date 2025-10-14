@@ -9,7 +9,12 @@ import { div } from "framer-motion/client";
 
 export default function Contact() {
   const { t } = useI18n();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const isMobile = detectMobile();
 
@@ -215,6 +220,20 @@ export default function Contact() {
                         id="email"
                         name="email"
                         value={form.email}
+                        onChange={handleChange}
+                        required
+                        className="form-control"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">
+                        {t("contact.phone")}
+                      </label>
+                      <input
+                        type="phone"
+                        id="phone"
+                        name="phone"
+                        value={form.phone}
                         onChange={handleChange}
                         required
                         className="form-control"
