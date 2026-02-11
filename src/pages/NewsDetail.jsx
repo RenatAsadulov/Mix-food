@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { useI18n } from "../i18n/i18n";
 import { formatNewsDate, getNewsItems } from "../utils/news";
+import SEO from "../components/seo/SEO";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(() =>
@@ -51,6 +52,27 @@ export default function NewsDetail() {
     lang === "pl" ? "Zamknij" : lang === "uk" ? "Закрити" : "Close";
   const backLabel = lang === "pl" ? "Powrót" : lang === "uk" ? "Назад" : "Back";
 
+  const breadcrumbs = [
+    { name: "MixFood", path: "/" },
+    { name: lang === "pl" ? "Aktualności" : lang === "uk" ? "Новини" : "News", path: "/news" },
+    { name: article.title, path: `/news/${article.slug}` },
+  ];
+
+  const seoComponent = (
+    <SEO
+      title={`${article.title} | MixFood`}
+      description={article.excerpt}
+      path={`/news/${article.slug}`}
+      lang={lang}
+      breadcrumbs={breadcrumbs}
+      article={{
+        title: article.title,
+        excerpt: article.excerpt,
+        date: article.date,
+      }}
+    />
+  );
+
   const articleBody = (
     <>
       <div className="mb-4">
@@ -79,6 +101,7 @@ export default function NewsDetail() {
   if (isMobile) {
     return (
       <>
+        {seoComponent}
         <div className="modal-backdrop fade show d-md-none" />
         <div className="modal d-block modal-fullscreen d-md-none" role="dialog">
           <div className="modal-dialog modal-fullscreen m-0">
@@ -102,8 +125,10 @@ export default function NewsDetail() {
   }
 
   return (
-    <article className="py-5">
-      <div className="bg-white shadow-sm rounded-4 p-4 p-lg-5">
+    <>
+      {seoComponent}
+      <article className="py-5">
+        <div className="bg-white shadow-sm rounded-4 p-4 p-lg-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <button
             type="button"
@@ -128,7 +153,8 @@ export default function NewsDetail() {
             </div> */}
           </div>
         </div>
-      </div>
-    </article>
+        </div>
+      </article>
+    </>
   );
 }

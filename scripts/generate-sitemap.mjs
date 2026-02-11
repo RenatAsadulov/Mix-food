@@ -1,11 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const BASE = "https://renatasadulov.github.io/Mix-food"; // прод-URL
+const BASE = "https://mixfood.in.ua";
 const routes = [
-  "/", // Главная
-  "/news/", // Новости
-  "/contact/", // Контакты
+  "/",
+  "/news/",
+  "/news/news-1/",
+  "/news/news-2/",
+  "/news/news-3/",
+  "/contact/",
 ];
 
 // ISO-дата обновления (можно улучшить под ваши коммиты/CI)
@@ -15,7 +18,9 @@ const urls = routes
   .map((p) => {
     const loc = `${BASE}${p}`;
     const changefreq = p === "/" ? "weekly" : "monthly";
-    const priority = p === "/" ? "1.0" : "0.8";
+    let priority = "0.8";
+    if (p === "/") priority = "1.0";
+    else if (p.startsWith("/news/news-")) priority = "0.6";
     return `<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
   })
   .join("");

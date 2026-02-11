@@ -8,6 +8,7 @@ export default function Hero() {
     <section id="hero" className="hero-section">
       <div className="hero-overlay">
         <motion.h2
+          id="hero-title"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -15,7 +16,7 @@ export default function Hero() {
         >
           {t("hero.title")}
         </motion.h2>
-        <p className="mx-auto fs-5 mb-4" style={{ maxWidth: "40rem" }}>
+        <p id="hero-subtitle" className="mx-auto fs-5 mb-4" style={{ maxWidth: "40rem" }}>
           {t("hero.subtitle")}
         </p>
         <Button asChild size="lg">

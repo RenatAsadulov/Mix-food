@@ -55,6 +55,34 @@ const translations = {
         "Please enter a valid phone number in international format, e.g. +44 20 1234 5678.",
     },
     footer: { rights: "All rights reserved." },
+    seo: {
+      homeTitle: "MixFood - Food Flavorings & Ingredients",
+      homeDescription:
+        "MixFood delivers premium food flavorings and raw ingredients from Poland to Ukrainian manufacturers.",
+      newsTitle: "News | MixFood",
+      newsDescription:
+        "Latest news and updates from MixFood - food flavorings supplier.",
+      contactTitle: "Contact | MixFood",
+      contactDescription:
+        "Contact MixFood for food flavorings, extracts and additives. Get technical support and consultation.",
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "What products does MixFood supply?",
+          answer: "MixFood supplies food flavorings, extracts, and raw ingredients from our Polish partner JAR for Ukrainian food manufacturers.",
+        },
+        {
+          question: "Which companies does MixFood work with?",
+          answer: "MixFood partners with market leaders including Lev and Lasunka, providing them with high-quality flavorings and ingredients.",
+        },
+        {
+          question: "How can I order flavorings from MixFood?",
+          answer: "You can contact us through the contact form on our website or call us directly. Our specialists will help you select the right products for your needs.",
+        },
+      ],
+    },
   },
   pl: {
     nav: { about: "O nas", news: "Aktualności", contact: "Kontakt" },
@@ -107,6 +135,34 @@ const translations = {
         "Wprowadź poprawny numer telefonu w formacie międzynarodowym, np. +48 501 234 567.",
     },
     footer: { rights: "Wszelkie prawa zastrzeżone." },
+    seo: {
+      homeTitle: "MixFood - Aromaty i składniki spożywcze",
+      homeDescription:
+        "MixFood dostarcza wysokiej jakości aromaty i składniki spożywcze z Polski dla ukraińskich producentów.",
+      newsTitle: "Aktualności | MixFood",
+      newsDescription:
+        "Najnowsze wiadomości i aktualności od MixFood - dostawcy aromatów spożywczych.",
+      contactTitle: "Kontakt | MixFood",
+      contactDescription:
+        "Skontaktuj się z MixFood w sprawie aromatów, ekstraktów i dodatków spożywczych.",
+    },
+    faq: {
+      title: "Często zadawane pytania",
+      items: [
+        {
+          question: "Jakie produkty dostarcza MixFood?",
+          answer: "MixFood dostarcza aromaty spożywcze, ekstrakty i surowce od naszego polskiego partnera JAR dla ukraińskich producentów żywności.",
+        },
+        {
+          question: "Z jakimi firmami współpracuje MixFood?",
+          answer: "MixFood współpracuje z liderami rynku, w tym z firmami Lev i Lasunka, dostarczając im wysokiej jakości aromaty i składniki.",
+        },
+        {
+          question: "Jak mogę zamówić aromaty od MixFood?",
+          answer: "Możesz skontaktować się z nami poprzez formularz kontaktowy na naszej stronie lub zadzwonić bezpośrednio. Nasi specjaliści pomogą dobrać odpowiednie produkty.",
+        },
+      ],
+    },
   },
   uk: {
     nav: { about: "Про нас", news: "Новини", contact: "Контакти" },
@@ -160,6 +216,34 @@ const translations = {
         "Введіть правильний номер телефону у міжнародному форматі, наприклад, +380 50 123 4567.",
     },
     footer: { rights: "Всі права захищені." },
+    seo: {
+      homeTitle: "MixFood - Харчові ароматизатори та інгредієнти",
+      homeDescription:
+        "MixFood постачає високоякісні харчові ароматизатори та сировину з Польщі для українських виробників.",
+      newsTitle: "Новини | MixFood",
+      newsDescription:
+        "Останні новини та оновлення від MixFood - постачальника харчових ароматизаторів.",
+      contactTitle: "Контакти | MixFood",
+      contactDescription:
+        "Зв'яжіться з MixFood для замовлення ароматизаторів, екстрактів та харчових добавок.",
+    },
+    faq: {
+      title: "Часті запитання",
+      items: [
+        {
+          question: "Які продукти постачає MixFood?",
+          answer: "MixFood постачає харчові ароматизатори, екстракти та сировину від нашого польського партнера JAR для українських виробників харчової продукції.",
+        },
+        {
+          question: "З якими компаніями співпрацює MixFood?",
+          answer: "MixFood співпрацює з лідерами ринку, включаючи компанії «Лев» та «Ласунка», забезпечуючи їх високоякісними ароматизаторами та інгредієнтами.",
+        },
+        {
+          question: "Як замовити ароматизатори від MixFood?",
+          answer: "Ви можете зв'язатися з нами через контактну форму на сайті або зателефонувати напряму. Наші фахівці допоможуть підібрати потрібні продукти.",
+        },
+      ],
+    },
   },
 };
 

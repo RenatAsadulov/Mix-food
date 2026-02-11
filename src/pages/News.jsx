@@ -3,14 +3,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useI18n } from "../i18n/i18n";
 import { getNewsItems, formatNewsDate } from "../utils/news";
+import SEO from "../components/seo/SEO";
 
 export default function NewsPage() {
   const { t, lang } = useI18n();
+  const breadcrumbs = [
+    { name: "MixFood", path: "/" },
+    { name: t("news.title"), path: "/news" },
+  ];
   const newsData = getNewsItems(t("news.items"));
   const readMoreLabel =
     lang === "pl" ? "Czytaj więcej" : lang === "uk" ? "Детальніше" : "Read more";
   return (
     <section className="container py-5">
+      <SEO
+        title={t("seo.newsTitle")}
+        description={t("seo.newsDescription")}
+        path="/news"
+        lang={lang}
+        breadcrumbs={breadcrumbs}
+      />
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

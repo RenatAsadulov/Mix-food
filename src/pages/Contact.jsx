@@ -3,9 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "../i18n/i18n";
 import { useRef, useState } from "react";
+import SEO from "../components/seo/SEO";
 
 export const ContactForm = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   const [form, setForm] = useState({
     name: "",
@@ -69,6 +70,12 @@ export const ContactForm = () => {
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="py-4">
+      <SEO
+        title={t("seo.contactTitle")}
+        description={t("seo.contactDescription")}
+        path="/contact"
+        lang={lang}
+      />
       <div className="container my-2">
         <div className="w-75 col-12 col-md-10 col-lg-6 mx-auto d-flex flex-column align-items-center">
           <header className="w-100 text-center mb-3">
