@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, Zap, Clock } from "lucide-react";
+import { Mail, Phone, MessageCircle, Clock } from "lucide-react";
 import { useI18n } from "../i18n/i18n";
 
 export default function Contact() {
@@ -73,10 +73,6 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="text-center mb-5"
             >
-              <div className="d-inline-flex align-items-center gap-2 mb-3 px-4 py-2 bg-primary bg-opacity-10 rounded-pill">
-                <Zap size={20} className="text-primary" />
-                <span className="fw-semibold text-primary">{t("contact.quickResponse")}</span>
-              </div>
               <h2 className="display-4 fw-bold mb-3">
                 {t("contact.title")}
               </h2>

@@ -113,7 +113,7 @@ const translations = {
     contact: {
       title: "Contact us",
       successTitle: "Thank you!",
-      lead: "Choose your preferred way to reach us. We respond within 2 hours during business hours.",
+      lead: "Let's create exceptional products together. Reach out and start a partnership that elevates your production.",
       successMessage: "We will contact you soon.",
       name: "Name",
       email: "E-mail",
@@ -290,7 +290,7 @@ const translations = {
     contact: {
       title: "Skontaktuj się z nami",
       successTitle: "Dziękujemy!",
-      lead: "Wybierz preferowany sposób kontaktu. Odpowiadamy w ciągu 2 godzin w godzinach pracy.",
+      lead: "Twórzmy razem wyjątkowe produkty. Skontaktuj się i rozpocznij współpracę, która podniesie Twoją produkcję.",
       successMessage: "Skontaktujemy się wkrótce.",
       name: "Imię",
       email: "E-mail",
@@ -468,7 +468,7 @@ const translations = {
     contact: {
       title: "Зв'яжіться з нами",
       successTitle: "Дякуємо!",
-      lead: "Оберіть зручний спосіб зв'язку. Ми відповідаємо протягом 2 годин у робочий час.",
+      lead: "Створюймо разом продукти, які вражають. Зв'яжіться з нами та розпочніть партнерство, що підніме ваше виробництво.",
       successMessage: "Ми зв'яжемося з вами найближчим часом.",
       name: "Ім'я",
       email: "Ел. пошта",
