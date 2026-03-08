@@ -1,6 +1,5 @@
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
-import NewsSection from "@/sections/NewsSection";
 import Contact from "@/sections/Contact";
 import SEO from "../components/seo/SEO";
 import { useI18n } from "../i18n/i18n";
@@ -28,7 +27,6 @@ export default function Home() {
       />
       <Hero />
       <About />
-      <NewsSection />
       <Contact />
     </>
   );

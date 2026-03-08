@@ -4,11 +4,6 @@ import path from "node:path";
 const BASE = "https://mixfood.in.ua";
 const routes = [
   "/",
-  "/news/",
-  "/news/news-1/",
-  "/news/news-2/",
-  "/news/news-3/",
-  "/contact/",
 ];
 
 // ISO-дата обновления (можно улучшить под ваши коммиты/CI)
@@ -18,9 +13,7 @@ const urls = routes
   .map((p) => {
     const loc = `${BASE}${p}`;
     const changefreq = p === "/" ? "weekly" : "monthly";
-    let priority = "0.8";
-    if (p === "/") priority = "1.0";
-    else if (p.startsWith("/news/news-")) priority = "0.6";
+    const priority = p === "/" ? "1.0" : "0.8";
     return `<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
   })
   .join("");

@@ -3,13 +3,16 @@ export function Button({
   className = "",
   asChild = false,
   size,
+  variant = "success",
   ...props
 }) {
   const Component = asChild ? "a" : "button";
   const sizeClass = size ? `btn-${size}` : "";
+  const variantClass = `btn-${variant}`;
+
   return (
     <Component
-      className={`btn btn-success bg-gradient rounded-3 ${sizeClass} ${className}`}
+      className={`btn ${variantClass} bg-gradient rounded-3 ${sizeClass} ${className}`}
       {...props}
     >
       {children}
