@@ -26,22 +26,11 @@ export default function Hero() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="hero-badge mb-4 d-inline-block"
-              >
-                <span className="badge bg-white bg-opacity-25 text-white px-4 py-2 rounded-pill backdrop-blur">
-                  Official JAR Representative in Ukraine
-                </span>
-              </motion.div>
-
               <motion.h1
                 id="hero-title"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="fw-bold display-3 mb-4 text-white hero-title"
                 style={{ letterSpacing: "-0.02em" }}
               >
@@ -52,7 +41,7 @@ export default function Hero() {
                 id="hero-subtitle"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 className="mx-auto fs-4 mb-5 text-white hero-subtitle"
                 style={{ maxWidth: "45rem", textShadow: "0 2px 4px rgba(0,0,0,0.2)" }}
               >
@@ -62,7 +51,7 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <a
                   href="#contact"
@@ -119,11 +108,6 @@ export default function Hero() {
         .hero-cta:hover {
           transform: translateY(-2px);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .backdrop-blur {
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
         }
 
         @media (max-width: 768px) {
