@@ -5,7 +5,7 @@ import { useI18n } from "../i18n/i18n";
 import { useRef, useState } from "react";
 import SEO from "../components/seo/SEO";
 
-export const ContactForm = () => {
+export default function Contact() {
   const { t, lang } = useI18n();
 
   const [form, setForm] = useState({

@@ -6,7 +6,7 @@ import { useI18n } from "../i18n/i18n";
 export default function Contact() {
   const { t } = useI18n();
   const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({ email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -16,7 +16,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("http://localhost:3010/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -26,7 +26,7 @@ export default function Contact() {
       setTimeout(() => {
         setSubmitted(false);
         setShowForm(false);
-        setForm({ email: "", phone: "", message: "" });
+        setForm({ name: "", email: "", phone: "", message: "" });
       }, 3000);
     } catch (err) {
       console.error("Contact form error:", err);
@@ -181,6 +181,21 @@ export default function Contact() {
                       className="quick-form p-4 rounded-4 bg-light"
                     >
                       <form onSubmit={handleSubmit}>
+                        <div className="mb-3 text-start">
+                          <label htmlFor="quick-name" className="form-label fw-semibold">
+                            {t("contact.yourName")}
+                          </label>
+                          <input
+                            type="text"
+                            id="quick-name"
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                            required
+                            className="form-control form-control-lg rounded-3"
+                            placeholder={t("contact.namePlaceholder")}
+                          />
+                        </div>
                         <div className="mb-3 text-start">
                           <label htmlFor="quick-email" className="form-label fw-semibold">
                             {t("contact.yourEmail")}
