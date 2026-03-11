@@ -13,16 +13,25 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In real implementation, this would send to your backend/email service
-    console.log("Form submitted:", form);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setShowForm(false);
-      setForm({ email: "", phone: "", message: "" });
-    }, 3000);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setShowForm(false);
+        setForm({ email: "", phone: "", message: "" });
+      }, 3000);
+    } catch (err) {
+      console.error("Contact form error:", err);
+      alert(t("contact.errorMessage") || "Something went wrong. Please try again.");
+    }
   };
 
   const contactChannels = [

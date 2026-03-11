@@ -4,6 +4,11 @@ import path from "node:path";
 const BASE = "https://mixfood.in.ua";
 const routes = [
   "/",
+  "/news",
+  "/news/news-1",
+  "/news/news-2",
+  "/news/news-3",
+  "/contact",
 ];
 
 // ISO-дата обновления (можно улучшить под ваши коммиты/CI)

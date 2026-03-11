@@ -16,6 +16,42 @@ const organizationSchema = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#localbusiness`,
+  name: "MixFood",
+  url: SITE_URL,
+  description:
+    "MixFood - постачальник харчових ароматизаторів та інгредієнтів для харчової промисловості",
+  image: `${SITE_URL}/og-image.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "вул. Садова, 1",
+    addressLocality: "Київ",
+    addressRegion: "Київська область",
+    postalCode: "01001",
+    addressCountry: "UA",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 50.4501,
+    longitude: 30.5234,
+  },
+  telephone: "+380-44-123-4567",
+  email: "info@mixfood.in.ua",
+  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  sameAs: [],
+};
+
 export default function SEO({
   title,
   description,
@@ -28,7 +64,7 @@ export default function SEO({
 }) {
   const canonicalUrl = `${SITE_URL}${path}`;
 
-  const structuredData = [organizationSchema];
+  const structuredData = [organizationSchema, localBusinessSchema];
 
   if (breadcrumbs) {
     structuredData.push({
