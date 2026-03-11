@@ -193,7 +193,7 @@ export default function Contact() {
                             onChange={handleChange}
                             required
                             className="form-control form-control-lg rounded-3"
-                            placeholder={t("contact.namePlaceholder")}
+                            placeholder={t("contact.enterName")}
                           />
                         </div>
                         <div className="mb-3 text-start">
@@ -208,7 +208,7 @@ export default function Contact() {
                             onChange={handleChange}
                             required
                             className="form-control form-control-lg rounded-3"
-                            placeholder="your@email.com"
+                            placeholder={t("contact.enterEmail")}
                           />
                         </div>
                         <div className="mb-3 text-start">
@@ -222,7 +222,7 @@ export default function Contact() {
                             value={form.phone}
                             onChange={handleChange}
                             className="form-control form-control-lg rounded-3"
-                            placeholder="+380 XX XXX XX XX"
+                            placeholder={t("contact.enterPhone")}
                             autoComplete="tel"
                           />
                         </div>
@@ -238,7 +238,7 @@ export default function Contact() {
                             onChange={handleChange}
                             required
                             className="form-control form-control-lg rounded-3"
-                            placeholder={t("contact.messagePlaceholder")}
+                            placeholder={t("contact.enterMessage")}
                           />
                         </div>
                         <div className="d-flex gap-2">
