@@ -7,9 +7,10 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "MixFood",
+  alternateName: ["МіксФуд", "Міксфуд", "миксфуд"],
   url: SITE_URL,
   description:
-    "MixFood - українська компанія з постачання харчових ароматизаторів та інгредієнтів",
+    "МіксФуд — українська компанія з постачання харчових ароматизаторів, барвників та стабілізаторів",
   address: {
     "@type": "PostalAddress",
     addressCountry: "UA",
@@ -21,9 +22,10 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": `${SITE_URL}/#localbusiness`,
   name: "MixFood",
+  alternateName: ["МіксФуд", "Міксфуд", "миксфуд"],
   url: SITE_URL,
   description:
-    "MixFood - постачальник харчових ароматизаторів та інгредієнтів для харчової промисловості",
+    "МіксФуд — постачальник харчових ароматизаторів, барвників та стабілізаторів для харчової промисловості",
   image: `${SITE_URL}/og-image.jpg`,
   address: {
     "@type": "PostalAddress",
