@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Rozwiązania smakowe dla Twojej produkcji",
+    "subtitle": "Dostawy B2B aromatów, barwników i stabilizatorów. Oficjalny przedstawiciel JAR na Ukrainie z własną produkcją.",
+    "cta": "Skontaktuj się"
+  },
+  "about": {
+    "title": "O nas",
+    "whoWeAre": {
+      "title": "Kim jesteśmy",
+      "text": "Jesteśmy firmą specjalizującą się w dostawach B2B aromatów spożywczych, barwników i stabilizatorów dla przedsiębiorstw przemysłu spożywczego. Jesteśmy oficjalnym przedstawicielem polskiej marki aromatów JAR na Ukrainie i posiadamy własne moce produkcyjne, które pozwalają nam tworzyć aromaty od podstaw i dostosowywać je do dowolnego procesu technologicznego."
+    },
+    "team": {
+      "title": "Zespół i ekspertyza",
+      "items": [
+        "Profesjonalny technolog z dużym praktycznym doświadczeniem w branży cukierniczej oraz w produkcji syropów i nadzień",
+        "Własny flaworysta, który stale rozszerza gamę smaków i tworzy unikalne aromaty",
+        "Wykwalifikowani menedżerowie, którzy głęboko rozumieją nasz asortyment i technologie jego zastosowania",
+        "Wsparcie prawne i finansowe, które kontroluje obieg dokumentów, certyfikację, kontrakty i operacje zagraniczne"
+      ]
+    },
+    "production": {
+      "title": "Produkcja i laboratorium",
+      "intro": "Posiadamy własne laboratorium wyposażone do:",
+      "items": [
+        "testowania i doskonalenia produktów",
+        "adaptacji aromatów do technologii klienta",
+        "tworzenia ekskluzywnych receptur unikalnych dla konkretnej produkcji"
+      ],
+      "outro": "Połączenie ekspertyzy i nowoczesnych technologii pozwala nam opracowywać rozwiązania, które harmonijnie integrują się z każdą recepturą produkcyjną."
+    },
+    "logistics": {
+      "title": "Logistyka i stabilność dostaw",
+      "intro": "Zapewniamy stałą dostępność produktów i nieprzerwaną dostawę dzięki:",
+      "items": [
+        "własnym zapasom magazynowym",
+        "sprawdzonej logistyce",
+        "kontroli partii i regularnym dostawom importowym",
+        "doświadczeniu we wdrażaniu produktów w zakładach klientów - od partii testowych do produkcji seryjnej"
+      ]
+    },
+    "geography": {
+      "title": "Geografia klientów",
+      "text": "Pracujemy z zakładami produkcyjnymi w całej Ukrainie, obejmując różne segmenty przemysłu spożywczego: cukierniczy, mleczarski, napoje, przekąski, produkty mrożone i inne obszary."
+    },
+    "approach": {
+      "title": "Nasze podejście",
+      "text": "Wierzymy, że udany produkt to wynik połączenia dwóch rzeczy: głębokiego zrozumienia procesów technologicznych i elastycznych możliwości produkcyjnych. Dlatego każdemu klientowi oferujemy nie tylko składnik, ale kompleksowe rozwiązanie."
+    }
+  },
+  "sections": {
+    "company": {
+      "title": "O firmie",
+      "text": "MixFood to ukraińska firma specjalizująca się w dostawach aromatów spożywczych, barwników i stabilizatorów. Pracujemy wyłącznie z klientami B2B: producentami żywności, HoReCa i markami własnymi. Oferujemy zarówno gotowe rozwiązania, jak i pomagamy opracować produkty dostosowane do Twojego procesu technologicznego."
+    },
+    "expertise": {
+      "title": "Ekspertyza i podejście",
+      "bullets": [
+        "Oficjalny przedstawiciel polskiej marki JAR — jednego z wiodących europejskich producentów aromatów",
+        "Pomagamy dobrać odpowiedni aromat do rodzaju produktu, stężenia i zastosowania",
+        "Każde zamówienie obejmuje konsultacje techniczne i pomoc we wdrożeniu produktu do procesu"
+      ]
+    },
+    "production": {
+      "title": "Własna produkcja i laboratorium",
+      "bullets": [
+        "Własna baza produkcyjna do wytwarzania i adaptacji aromatów",
+        "Własny flaworysta z doświadczeniem w tworzeniu ekskluzywnych receptur",
+        "Możliwość tworzenia niestandardowych profili smakowych według specyfikacji klienta"
+      ]
+    },
+    "logistics": {
+      "title": "Logistyka i stabilność dostaw",
+      "bullets": [
+        "Bezpośrednie dostawy z Polski — krótkie terminy i optymalizacja kosztów",
+        "Własne magazyny na Ukrainie — dostępność produktów i szybka wysyłka",
+        "Sprawdzona logistyka obejmująca wszystkie regiony Ukrainy",
+        "Przejrzyste warunki, dokumentacja jakości i pełne wsparcie na każdym etapie współpracy"
+      ]
+    },
+    "principle": {
+      "title": "Nasza zasada działania",
+      "text": "Pracujemy z tymi, którzy cenią jakość, niezawodność i profesjonalne podejście. Jeśli szukasz partnera, któremu możesz powierzyć swoje aromaty — jesteśmy gotowi do rozmowy o współpracy."
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "successTitle": "Dziękujemy!",
+    "lead": "Twórzmy razem wyjątkowe produkty. Skontaktuj się i rozpocznij współpracę, która podniesie Twoją produkcję.",
+    "successMessage": "Skontaktujemy się wkrótce.",
+    "name": "Imię",
+    "email": "E-mail",
+    "phone": "Numer telefonu",
+    "message": "Wiadomość",
+    "send": "Wyślij",
+    "privacyNote": "Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu i przygotowania oferty handlowej.",
+    "emailInvalid": "Wpisz adres e-mail w formacie your_email@test.com",
+    "phoneInvalid": "Wprowadź poprawny numer telefonu w formacie międzynarodowym, np. +48 501 234 567.",
+    "quickResponse": "Szybka odpowiedź",
+    "whatsappSubtitle": "Czat na żywo",
+    "telegramSubtitle": "Szybka odpowiedź",
+    "sendQuickMessage": "Lub wyślij szybką wiadomość",
+    "yourName": "Twoje imię",
+    "yourEmail": "E-mail",
+    "yourPhone": "Telefon",
+    "optional": "opcjonalnie",
+    "enterName": "Imię",
+    "enterEmail": "E-mail",
+    "enterPhone": "Numer telefonu",
+    "enterMessage": "Wiadomość",
+    "errorMessage": "Coś poszło nie tak. Proszę spróbować ponownie.",
+    "cancel": "Anuluj",
+    "sendMessage": "Wyślij wiadomość",
+    "dataProtected": "Twoje dane są chronione. Odpowiadamy na wszystkie zapytania w ciągu 2 godzin roboczych.",
+    "workingHours": "Godziny pracy",
+    "workingDays": "Pon - Pt",
+    "workingTime": "9:00 - 17:00"
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "services": "Usługi",
+    "servicesItems": {
+      "flavorings": "Aromaty spożywcze",
+      "colorings": "Barwniki",
+      "stabilizers": "Stabilizatory",
+      "jar": "Produkty JAR"
+    },
+    "contactCta": "Gotowy omówić swoje potrzeby? Skontaktuj się z naszym zespołem.",
+    "jarRepresentative": "Oficjalny przedstawiciel JAR na Ukrainie"
+  },
+  "seo": {
+    "homeTitle": "MixFood — Aromaty spożywcze, barwniki i stabilizatory hurtowo na Ukrainie",
+    "homeDescription": "Dostawca B2B składników spożywczych na Ukrainie. Aromaty dla cukiernictwa, mleczarstwa, napojów, przekąsek. Stabilizatory do produktów mrożonych, jogurtów, deserów. Własne laboratorium, adaptacja do procesu technologicznego, opracowywanie ekskluzywnych receptur. Import z Polski, nadzienia cukiernicze, aromaty do syropów.",
+    "keywords": "aromaty spożywcze hurtowo, barwniki dla przemysłu spożywczego, stabilizatory do produkcji, dostawca składników spożywczych Ukraina, aromaty od ukraińskiego producenta, import aromatów z Polski, aromaty dla przemysłu cukierniczego, stabilizatory do produktów mlecznych, aromaty do produkcji napojów, składniki do przekąsek, stabilizatory do produktów mrożonych, aromaty do syropów, nadzienia cukiernicze, adaptacja aromatów do procesu technologicznego, opracowywanie ekskluzywnych receptur, własne laboratorium aromatów, partie testowe aromatów, konsultacje techniczne składniki spożywcze, dostawy B2B aromatów"
+  },
+  "faq": {
+    "title": "Często zadawane pytania",
+    "items": [
+      {
+        "question": "Jakie produkty dostarcza MixFood?",
+        "answer": "MixFood dostarcza aromaty spożywcze, barwniki i stabilizatory dla przemysłu spożywczego. Jesteśmy oficjalnym przedstawicielem polskiej marki JAR i produkujemy również własne aromaty."
+      },
+      {
+        "question": "Czy możecie dostosować aromaty do naszego procesu produkcyjnego?",
+        "answer": "Tak. Nasze laboratorium i własny flaworysta mogą dostosować każdy aromat do konkretnego procesu technologicznego i stworzyć ekskluzywne receptury."
+      },
+      {
+        "question": "Jak mogę zamówić produkty od MixFood?",
+        "answer": "Skontaktuj się z nami przez formularz na stronie lub zadzwoń bezpośrednio. Nasz zespół pomoże dobrać produkty, zorganizować partie testowe i zapewnić stabilne dostawy."
+      }
+    ]
+  }
+}

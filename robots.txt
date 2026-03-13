@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://renatasadulov.github.io/Mix-food/sitemap.xml

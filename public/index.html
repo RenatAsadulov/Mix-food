@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://mixfood.in.ua/uk/">
+  <title>MixFood - Redirecting...</title>
+  <script>
+    (function() {
+      var lang = (navigator.language || navigator.userLanguage || 'uk').toLowerCase();
+      var path = '/uk/'; // default
+
+      if (lang.startsWith('en')) {
+        path = '/en/';
+      } else if (lang.startsWith('pl')) {
+        path = '/pl/';
+      } else if (lang.startsWith('uk') || lang.startsWith('ru')) {
+        path = '/uk/';
+      }
+
+      window.location.replace(path);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/uk/">
+  </noscript>
+</head>
+<body>
+  <noscript>
+    <p>Redirecting... <a href="/uk/">Click here</a> if not redirected.</p>
+  </noscript>
+</body>
+</html>

@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        # Vite -> dist/ ; если CRA — поменяй ниже на build/
+        # Next.js static export -> out/
         run: npm run build
 
       - name: Setup SSH (decode base64)
@@ -39,11 +39,11 @@ jobs:
 
       - name: Rsync upload to temp dir
         run: |
-          # Создаём временную папку на сервере и заливаем dist/
+          # Create temp folder on server and upload out/
           rsync -az --delete --progress \
             -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
             --rsync-path="mkdir -p /var/www/mixfood/client_new && rsync" \
-            ./dist/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
+            ./out/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
 
       - name: Rsync (debug on failure)
         if: failure()
@@ -51,7 +51,7 @@ jobs:
           rsync -azv --delete \
             -e "ssh -vvv -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
             --rsync-path="mkdir -p /var/www/mixfood/client_new && rsync" \
-            ./dist/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
+            ./out/ root@${{ secrets.VPS_HOST }}:/var/www/mixfood/client_new/
 
       - name: Atomic swap
         run: |

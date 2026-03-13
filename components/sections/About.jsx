@@ -1,0 +1,217 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Users, Beaker, Truck, Globe, Target, Factory } from "lucide-react";
+
+export default function About() {
+  const t = useTranslations("about");
+
+  const teamItems = t.raw("team.items");
+  const productionItems = t.raw("production.items");
+  const logisticsItems = t.raw("logistics.items");
+
+  return (
+    <section id="about" className="position-relative py-5 overflow-hidden">
+      <div className="container py-4">
+        <motion.h2
+          id="about-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="display-4 fw-bold mb-5 text-center"
+          style={{ letterSpacing: "-0.02em" }}
+        >
+          {t("title")}
+        </motion.h2>
+
+        {/* Bento Box Grid Layout */}
+        <div className="row g-4 mb-5">
+          {/* Large Hero Image Card - Top Left */}
+          <motion.div
+            className="col-lg-7"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="about-card about-card-image h-100 position-relative overflow-hidden rounded-4">
+              <img
+                src="/images/fruit-molecules-6.jpg"
+                alt="Food flavoring science"
+                className="w-100 h-100 object-fit-cover"
+                style={{ minHeight: "400px" }}
+              />
+              <div className="about-card-overlay position-absolute bottom-0 start-0 w-100 p-4">
+                <div className="glass-card p-4 rounded-3">
+                  <div className="d-flex align-items-center mb-2">
+                    <Factory className="text-white me-2" size={28} />
+                    <h3 className="h4 fw-bold mb-0 text-white">
+                      {t("whoWeAre.title")}
+                    </h3>
+                  </div>
+                  <p className="text-white mb-0 opacity-90">
+                    {t("whoWeAre.text")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Team Card - Top Right */}
+          <motion.div
+            className="col-lg-5"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="about-card h-100 p-4 rounded-4 bg-light">
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-wrapper me-3">
+                  <Users className="text-primary" size={32} />
+                </div>
+                <h3 className="h4 fw-bold mb-0">{t("team.title")}</h3>
+              </div>
+              <ul className="list-unstyled mb-0">
+                {teamItems.map((item, idx) => (
+                  <motion.li
+                    key={idx}
+                    className="mb-3 d-flex"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <span className="text-primary fw-bold me-2">→</span>
+                    <span className="text-secondary">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="row g-4 mb-5">
+          {/* Production Card with Image - Middle Left */}
+          <motion.div
+            className="col-lg-5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="about-card h-100 rounded-4 overflow-hidden position-relative">
+              <img
+                src="/images/fruit-molecules-3.jpg"
+                alt="Laboratory production"
+                className="w-100 h-100 object-fit-cover position-absolute"
+                style={{ minHeight: "350px" }}
+              />
+              <div className="position-relative p-4 h-100 d-flex flex-column justify-content-end">
+                <div className="glass-card p-4 rounded-3">
+                  <div className="d-flex align-items-center mb-2">
+                    <Beaker className="text-white me-2" size={28} />
+                    <h3 className="h4 fw-bold mb-0 text-white">
+                      {t("production.title")}
+                    </h3>
+                  </div>
+                  <p className="text-white mb-2 opacity-90">
+                    {t("production.intro")}
+                  </p>
+                  <ul className="list-unstyled mb-2 small">
+                    {productionItems.map((item, idx) => (
+                      <li key={idx} className="mb-1 text-white opacity-90">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Logistics Card - Middle Center */}
+          <motion.div
+            className="col-lg-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="about-card h-100 p-4 rounded-4 bg-white shadow-sm">
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-wrapper me-3">
+                  <Truck className="text-primary" size={32} />
+                </div>
+                <h3 className="h5 fw-bold mb-0">{t("logistics.title")}</h3>
+              </div>
+              <p className="text-secondary mb-3 small">
+                {t("logistics.intro")}
+              </p>
+              <ul className="list-unstyled mb-0 small">
+                {logisticsItems.map((item, idx) => (
+                  <li key={idx} className="mb-2 text-secondary">
+                    <span className="text-primary">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Geography Card with Image - Middle Right */}
+          <motion.div
+            className="col-lg-3"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="about-card h-100 rounded-4 overflow-hidden position-relative">
+              <img
+                src="/images/fruit-molecules-4.jpg"
+                alt="Global reach"
+                className="w-100 h-100 object-fit-cover"
+                style={{ minHeight: "350px" }}
+              />
+              <div className="about-card-overlay position-absolute bottom-0 start-0 w-100 p-3">
+                <div className="glass-card p-3 rounded-3">
+                  <div className="d-flex align-items-center mb-2">
+                    <Globe className="text-white me-2" size={24} />
+                    <h3 className="h6 fw-bold mb-0 text-white">
+                      {t("geography.title")}
+                    </h3>
+                  </div>
+                  <p className="text-white mb-0 small opacity-90">
+                    {t("geography.text")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Approach Card - Full Width Bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <div className="about-card about-card-gradient p-5 rounded-4 text-center position-relative overflow-hidden">
+            <div className="position-relative z-1">
+              <Target className="text-white mb-3 mx-auto" size={48} />
+              <h3 className="h3 fw-bold mb-3 text-white">
+                {t("approach.title")}
+              </h3>
+              <p className="lead text-white mb-0 mx-auto" style={{ maxWidth: "800px" }}>
+                {t("approach.text")}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

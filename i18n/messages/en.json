@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Flavor solutions for your production",
+    "subtitle": "B2B supply of flavorings, colorings and stabilizers. Official JAR representative in Ukraine with in-house manufacturing.",
+    "cta": "Get in touch"
+  },
+  "about": {
+    "title": "About us",
+    "whoWeAre": {
+      "title": "Who we are",
+      "text": "We are a company specializing in B2B supply of food flavorings, colorings and stabilizers for food industry enterprises. We are the official representative of the Polish flavoring brand JAR in Ukraine and have our own production facilities that allow us to create flavorings from scratch and adapt them to any technological process."
+    },
+    "team": {
+      "title": "Team and expertise",
+      "items": [
+        "Professional technologist with extensive practical experience in confectionery and in the production of syrups and fillings",
+        "In-house flavorist who constantly expands the flavor range and creates unique flavorings",
+        "Qualified managers who deeply understand our assortment and the technologies of its application",
+        "Legal and financial support that controls document flow, certification, contracts and foreign economic operations"
+      ]
+    },
+    "production": {
+      "title": "Production and laboratory",
+      "intro": "We have our own laboratory equipped for:",
+      "items": [
+        "testing and improving products",
+        "adapting flavorings to client technologies",
+        "creating exclusive recipes unique to specific production"
+      ],
+      "outro": "The combination of expertise and modern technologies allows us to develop solutions that harmoniously integrate into any production recipe."
+    },
+    "logistics": {
+      "title": "Logistics and supply stability",
+      "intro": "We ensure constant product availability and uninterrupted deliveries thanks to:",
+      "items": [
+        "own warehouse stocks",
+        "established logistics",
+        "batch control and regular import deliveries",
+        "experience implementing products at client facilities - from test batches to serial production"
+      ]
+    },
+    "geography": {
+      "title": "Client geography",
+      "text": "We work with production facilities throughout Ukraine, covering various segments of the food industry: confectionery, dairy, beverages, snacks, frozen products and other areas."
+    },
+    "approach": {
+      "title": "Our approach",
+      "text": "We believe that a successful product is the result of combining two things: deep understanding of technological processes and flexible production capabilities. Therefore, we offer each client not just a component, but a comprehensive solution."
+    }
+  },
+  "sections": {
+    "company": {
+      "title": "About the Company",
+      "text": "MixFood is a Ukrainian company specializing in supplying food flavorings, colorings, and stabilizers. We work exclusively with B2B clients: food manufacturers, HoReCa, and private labels. We offer both ready-made solutions and help develop products tailored to your technological process."
+    },
+    "expertise": {
+      "title": "Expertise & Approach",
+      "bullets": [
+        "Official representative of the Polish brand JAR — one of Europe's leading flavoring manufacturers",
+        "We help select the right flavoring for your product type, concentration, and application",
+        "Each order is accompanied by technical consultation and assistance in integrating the product into your process"
+      ]
+    },
+    "production": {
+      "title": "In-House Production & Laboratory",
+      "bullets": [
+        "Own production base for manufacturing and adapting flavorings",
+        "In-house flavorist with experience creating exclusive formulations",
+        "Ability to create custom flavoring profiles tailored to client specifications"
+      ]
+    },
+    "logistics": {
+      "title": "Logistics & Supply Stability",
+      "bullets": [
+        "Direct deliveries from Poland — short lead times and cost optimization",
+        "Own warehouses in Ukraine — product availability and prompt shipping",
+        "Established logistics covering all regions of Ukraine",
+        "Transparent terms, quality documentation, and full support at every cooperation stage"
+      ]
+    },
+    "principle": {
+      "title": "Our Working Principle",
+      "text": "We work with those who value quality, reliability, and a professional approach. If you're looking for a partner you can trust with your flavorings — we're ready to discuss cooperation."
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "successTitle": "Thank you!",
+    "lead": "Let's create exceptional products together. Reach out and start a partnership that elevates your production.",
+    "successMessage": "We will contact you soon.",
+    "name": "Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "privacyNote": "By submitting this form, you consent to the processing of your personal data for communication and preparation of a commercial offer.",
+    "emailInvalid": "Enter email in format your_email@test.com",
+    "phoneInvalid": "Please enter a valid phone number in international format, e.g. +44 20 1234 5678.",
+    "quickResponse": "Quick Response",
+    "whatsappSubtitle": "Instant chat",
+    "telegramSubtitle": "Fast response",
+    "sendQuickMessage": "Or send a quick message",
+    "yourName": "Your name",
+    "yourEmail": "Email",
+    "yourPhone": "Phone",
+    "optional": "optional",
+    "enterName": "Name",
+    "enterEmail": "Email",
+    "enterPhone": "Phone number",
+    "enterMessage": "Message",
+    "errorMessage": "Something went wrong. Please try again.",
+    "cancel": "Cancel",
+    "sendMessage": "Send Message",
+    "dataProtected": "Your data is protected. We respond to all inquiries within 2 business hours.",
+    "workingHours": "Working hours",
+    "workingDays": "Mon - Fri",
+    "workingTime": "9:00 AM - 5:00 PM"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "services": "Services",
+    "servicesItems": {
+      "flavorings": "Food Flavorings",
+      "colorings": "Colorings",
+      "stabilizers": "Stabilizers",
+      "jar": "JAR Products"
+    },
+    "contactCta": "Ready to discuss your needs? Get in touch with our team.",
+    "jarRepresentative": "Official JAR Representative in Ukraine"
+  },
+  "seo": {
+    "homeTitle": "MixFood — Wholesale Food Flavorings, Colorings & Stabilizers in Ukraine",
+    "homeDescription": "B2B supplier of food ingredients in Ukraine. Flavorings for confectionery, dairy, beverages, snacks. Stabilizers for frozen products, yogurt, desserts. In-house laboratory, adaptation to your technological process, exclusive recipe development. Import from Poland, fillings for confectionery, flavorings for syrups.",
+    "keywords": "wholesale food flavorings, colorings for food industry, stabilizers for production, food ingredients supplier Ukraine, flavorings from Ukrainian manufacturer, import flavorings from Poland, flavorings for confectionery industry, stabilizers for dairy products, flavorings for beverage production, ingredients for snack products, stabilizers for frozen products, flavorings for syrups, fillings for confectionery, flavoring adaptation for technological process, exclusive recipe development, in-house flavoring laboratory, test batches flavorings, technical consultation food ingredients, B2B flavoring supply"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What products does MixFood supply?",
+        "answer": "MixFood supplies food flavorings, colorings and stabilizers for the food industry. We are the official representative of the Polish brand JAR and also produce our own flavorings."
+      },
+      {
+        "question": "Can you adapt flavorings to our production process?",
+        "answer": "Yes. Our laboratory and in-house flavorist can adapt any flavoring to your specific technological process and create exclusive recipes."
+      },
+      {
+        "question": "How can I order from MixFood?",
+        "answer": "Contact us through the form on our website or call directly. Our team will help select products, arrange test batches and ensure stable supply."
+      }
+    ]
+  }
+}

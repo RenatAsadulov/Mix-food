@@ -5,40 +5,60 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ```bash
-npm run dev       # Start Vite dev server with HMR
-npm run build     # Production build (outputs to dist/, auto-generates sitemap)
-npm run preview   # Preview production build locally
+npm run dev       # Start Next.js dev server (localhost:3000)
+npm run build     # Production build
+npm run start     # Start production server
 ```
 
 ## Architecture Overview
 
-This is a React 18 single-page application for MixFood, a Ukrainian food flavorings company. Built with Vite and styled using Bootstrap 5 (loaded via CDN).
+This is a Next.js 14+ App Router application for MixFood, a Ukrainian food flavorings company. Built with SSR/SSG for SEO optimization.
+
+### Tech Stack
+- **Framework**: Next.js 16 with App Router
+- **Styling**: Bootstrap 5 (via CDN) + custom CSS
+- **i18n**: next-intl with URL-based routing (/uk/, /en/, /pl/)
+- **Animations**: framer-motion
+- **Icons**: lucide-react
 
 ### Routing Structure
-- Uses `react-router-dom` v7 with `createBrowserRouter`
-- Routes: `/` (home), `/news`, `/news/:slug`, `/contact`
-- Layout wrapper in `Router.jsx` provides Header/Footer around all pages
+- Uses App Router with `[locale]` dynamic segment
+- Routes: `/[locale]` (home), `/[locale]/news`, `/[locale]/news/[slug]`
+- Middleware handles locale detection and redirects
 
 ### Internationalization
-- Custom i18n implementation in `src/i18n/i18n.jsx`
-- Three languages: English (en), Polish (pl), Ukrainian (uk)
-- All translations are inline in the i18n file (not external JSON)
-- `useI18n()` hook provides `t()` function, `lang`, and `setLang`
-- Language detection from browser, persisted to localStorage
+- **Library**: next-intl
+- **Languages**: Ukrainian (uk - default), English (en), Polish (pl)
+- **Translations**: JSON files in `i18n/messages/`
+- **Routing**: URL prefixes for each language
+- `useTranslations()` hook for client components
+- `getTranslations()` for server components
 
-### Path Aliases (configured in vite.config.js)
-- `@/components` → `src/components`
-- `@/sections` → `src/sections`
+### Path Aliases (configured in jsconfig.json)
+- `@/*` → root
+- `@/components/*` → `components/*`
+- `@/sections/*` → `components/sections/*`
+- `@/lib/*` → `lib/*`
+- `@/i18n/*` → `i18n/*`
 
 ### Component Organization
-- `src/pages/` - Route-level components (Home, News, NewsDetail, Contact)
-- `src/sections/` - Page sections used on Home (Hero, About, NewsSection, Contact)
-- `src/components/layout/` - Header, Footer
-- `src/components/ui/` - Reusable UI primitives (button, card)
-- `src/components/features/` - Feature-specific components
-- `src/utils/` - Utility functions (browser detection, news helpers)
+- `app/[locale]/` - Route-level pages
+- `components/layout/` - Header, Footer
+- `components/sections/` - Hero, About, Contact
+- `components/ui/` - Button, Card
+- `lib/` - Utility functions
+- `i18n/` - Internationalization config and translations
 
-### Key Dependencies
-- `framer-motion` - Animations
-- `lucide-react` - Icons
-- `react-helmet-async` - Document head management
+### Key Files
+- `middleware.js` - Locale routing middleware
+- `i18n/routing.js` - Locale configuration
+- `i18n/request.js` - Server-side i18n config
+- `app/sitemap.js` - Dynamic sitemap generation
+- `app/robots.js` - Robots.txt generation
+
+### SEO Features
+- Server-side rendered HTML for crawlers
+- `generateMetadata()` for each page
+- JSON-LD structured data (Organization, LocalBusiness, FAQ)
+- Hreflang alternates for all languages
+- Dynamic sitemap with all routes

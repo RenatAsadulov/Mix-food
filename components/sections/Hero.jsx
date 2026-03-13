@@ -1,0 +1,73 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
+
+export default function Hero() {
+  const t = useTranslations("hero");
+
+  return (
+    <section id="hero" className="hero-section position-relative overflow-hidden">
+      {/* Background Image with Parallax Effect */}
+      <motion.div
+        className="hero-bg position-absolute w-100 h-100"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.2 }}
+      >
+        <img
+          src="/images/fruit-molecules-1.jpg"
+          alt="Food flavoring molecules"
+          className="w-100 h-100 object-fit-cover"
+        />
+        <div className="hero-gradient position-absolute top-0 start-0 w-100 h-100"></div>
+      </motion.div>
+
+      {/* Content */}
+      <div className="hero-overlay position-relative">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10 text-center">
+              <motion.h1
+                id="hero-title"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="fw-bold display-3 mb-4 text-white hero-title"
+                style={{ letterSpacing: "-0.02em" }}
+              >
+                {t("title")}
+              </motion.h1>
+
+              <motion.p
+                id="hero-subtitle"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mx-auto fs-4 mb-5 text-white hero-subtitle"
+                style={{ maxWidth: "45rem", textShadow: "0 2px 4px rgba(0,0,0,0.2)" }}
+              >
+                {t("subtitle")}
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <a
+                  href="#contact"
+                  className="btn btn-light btn-lg px-5 py-3 rounded-pill hero-cta shadow-lg"
+                >
+                  <span className="me-2">{t("cta")}</span>
+                  <ArrowRight size={20} className="d-inline" />
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
