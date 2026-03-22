@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mixfood.in.ua/uk/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mixfood.in.ua/uk/"/>
@@ -12,6 +13,7 @@
   </url>
   <url>
     <loc>https://mixfood.in.ua/en/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mixfood.in.ua/uk/"/>
@@ -21,6 +23,7 @@
   </url>
   <url>
     <loc>https://mixfood.in.ua/pl/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mixfood.in.ua/uk/"/>
