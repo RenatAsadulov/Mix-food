@@ -1,7 +1,7 @@
-import { Resend } from 'resend';
-import { NextResponse } from 'next/server';
+import { Resend } from "resend";
+import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_AkaXZxYE_6EnLGzLM4ymHCJonK1wQvQo9");
 
 export async function POST(request) {
   try {
@@ -10,15 +10,15 @@ export async function POST(request) {
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: 'Name, email, and message are required' },
-        { status: 400 }
+        { error: "Name, email, and message are required" },
+        { status: 400 },
       );
     }
 
     // Send email to MixFood
     const { data, error } = await resend.emails.send({
-      from: 'MixFood Contact <onboarding@resend.dev>',
-      to: ['wowasadulow20@gmail.com'],
+      from: "MixFood Contact <onboarding@resend.dev>",
+      to: ["wowasadulow20@gmail.com"],
       replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
@@ -30,12 +30,12 @@ export async function POST(request) {
           <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0 0 10px;"><strong>Name:</strong> ${name}</p>
             <p style="margin: 0 0 10px;"><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p style="margin: 0 0 10px;"><strong>Phone:</strong> ${phone}</p>` : ''}
+            ${phone ? `<p style="margin: 0 0 10px;"><strong>Phone:</strong> ${phone}</p>` : ""}
           </div>
 
           <div style="background: #fff; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px;">
             <h3 style="margin: 0 0 10px; color: #333;">Message:</h3>
-            <p style="margin: 0; color: #555; line-height: 1.6;">${message.replace(/\n/g, '<br>')}</p>
+            <p style="margin: 0; color: #555; line-height: 1.6;">${message.replace(/\n/g, "<br>")}</p>
           </div>
 
           <p style="color: #999; font-size: 12px; margin-top: 20px;">
@@ -46,19 +46,19 @@ export async function POST(request) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error("Resend error:", error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
-        { status: 500 }
+        { error: "Failed to send email" },
+        { status: 500 },
       );
     }
 
     return NextResponse.json({ success: true, id: data.id });
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { error: "Internal server error" },
+      { status: 500 },
     );
   }
 }
