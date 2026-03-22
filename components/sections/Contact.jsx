@@ -58,8 +58,8 @@ export default function Contact() {
       label: t("email"),
       subtitle: "office.mixfood@gmail.com",
       href: "mailto:office.mixfood@gmail.com",
-      color: "#667eea",
-      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      color: "#00a419",
+      gradient: "linear-gradient(135deg, #00a419 0%, #006b10 100%)",
     },
   ];
 
