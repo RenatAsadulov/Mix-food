@@ -115,6 +115,7 @@
     "errorMessage": "Something went wrong. Please try again.",
     "cancel": "Cancel",
     "sendMessage": "Send Message",
+    "sending": "Sending...",
     "dataProtected": "Your data is protected. We respond to all inquiries within 2 business hours.",
     "workingHours": "Working hours",
     "workingDays": "Mon - Fri",

@@ -10,6 +10,7 @@ export default function Contact() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,8 +18,18 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      // For now, just show success - implement actual submission later
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -28,6 +39,8 @@ export default function Contact() {
     } catch (err) {
       console.error("Contact form error:", err);
       alert(t("errorMessage"));
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -231,9 +244,10 @@ export default function Contact() {
                           </button>
                           <button
                             type="submit"
+                            disabled={isLoading}
                             className="btn btn-primary px-5 py-2 rounded-pill flex-grow-1"
                           >
-                            {t("sendMessage")}
+                            {isLoading ? t("sending") : t("sendMessage")}
                           </button>
                         </div>
                       </form>

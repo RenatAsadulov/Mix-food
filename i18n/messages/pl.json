@@ -115,6 +115,7 @@
     "errorMessage": "Coś poszło nie tak. Proszę spróbować ponownie.",
     "cancel": "Anuluj",
     "sendMessage": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
     "dataProtected": "Twoje dane są chronione. Odpowiadamy na wszystkie zapytania w ciągu 2 godzin roboczych.",
     "workingHours": "Godziny pracy",
     "workingDays": "Pon - Pt",
