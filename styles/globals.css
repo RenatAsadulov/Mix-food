@@ -307,12 +307,12 @@ section {
 
 .logo-text {
   font-size: 1.5rem;
-  color: var(--bs-primary);
+  color: #00a419 !important;
   transition: color 0.3s ease;
 }
 
 .logo-wrapper:hover .logo-text {
-  color: var(--color-primary-dark);
+  color: #006b10 !important;
 }
 
 .nav-link-modern {
