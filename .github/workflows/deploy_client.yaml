@@ -55,6 +55,12 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes root@${{ secrets.VPS_HOST }} << 'EOF'
             set -euo pipefail
+
+            # Load nvm and use Node 22
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22
+
             TARGET="/var/www/mixfood/client"
             NEW="/var/www/mixfood/client_new"
             OLD="/var/www/mixfood/client_old"
