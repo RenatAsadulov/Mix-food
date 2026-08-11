@@ -16,11 +16,17 @@ export default function Hero() {
         animate={{ scale: 1 }}
         transition={{ duration: 1.2 }}
       >
-        <img
-          src="/images/fruit-molecules-1.jpg"
-          alt="Food flavoring molecules"
-          className="w-100 h-100 object-fit-cover"
-        />
+        <picture>
+          <source srcSet="/images/fruit-molecules-1.webp" type="image/webp" />
+          <img
+            src="/images/fruit-molecules-1.jpg"
+            alt="Food flavoring molecules"
+            className="w-100 h-100 object-fit-cover"
+            width={896}
+            height={1152}
+            fetchPriority="high"
+          />
+        </picture>
         <div className="hero-gradient position-absolute top-0 start-0 w-100 h-100"></div>
       </motion.div>
 

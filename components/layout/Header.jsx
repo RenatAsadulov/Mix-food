@@ -72,7 +72,13 @@ export default function Header() {
         <div className="d-flex align-items-center justify-content-between py-3">
           {/* Logo */}
           <Link href="/" className="logo-wrapper d-flex align-items-center text-decoration-none">
-            <img src="/images/logo.png" alt="MixFood ingredients" className="logo-img" />
+            <img
+              src="/images/logo.png"
+              alt="MixFood ingredients"
+              className="logo-img"
+              width={560}
+              height={174}
+            />
           </Link>
 
           {/* Desktop Navigation */}

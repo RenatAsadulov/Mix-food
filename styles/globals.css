@@ -131,6 +131,15 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/*
+  <picture> wraps the <img> for WebP delivery. display:contents keeps it from
+  generating a box, so the img keeps its original relationship to the sized
+  parent — otherwise w-100/h-100 percentages resolve against nothing.
+*/
+picture {
+  display: contents;
+}
+
 /* Image object-fit utility */
 .object-fit-cover {
   object-fit: cover;

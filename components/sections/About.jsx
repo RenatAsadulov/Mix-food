@@ -36,12 +36,19 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="about-card about-card-image h-100 position-relative overflow-hidden rounded-4">
-              <img
-                src="/images/fruit-molecules-6.jpg"
-                alt="Food flavoring science"
-                className="w-100 h-100 object-fit-cover"
-                style={{ minHeight: "400px" }}
-              />
+              <picture>
+                <source srcSet="/images/fruit-molecules-6.webp" type="image/webp" />
+                <img
+                  src="/images/fruit-molecules-6.jpg"
+                  alt="Food flavoring science"
+                  className="w-100 h-100 object-fit-cover"
+                  style={{ minHeight: "400px" }}
+                  width={1152}
+                  height={864}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="about-card-overlay position-absolute bottom-0 start-0 w-100 p-4">
                 <div className="glass-card p-4 rounded-3">
                   <div className="d-flex align-items-center mb-2">
@@ -102,12 +109,19 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="about-card h-100 rounded-4 overflow-hidden position-relative">
-              <img
-                src="/images/fruit-molecules-3.jpg"
-                alt="Laboratory production"
-                className="w-100 h-100 object-fit-cover position-absolute"
-                style={{ minHeight: "350px" }}
-              />
+              <picture>
+                <source srcSet="/images/fruit-molecules-3.webp" type="image/webp" />
+                <img
+                  src="/images/fruit-molecules-3.jpg"
+                  alt="Laboratory production"
+                  className="w-100 h-100 object-fit-cover position-absolute"
+                  style={{ minHeight: "350px" }}
+                  width={1152}
+                  height={864}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="position-relative p-4 h-100 d-flex flex-column justify-content-end">
                 <div className="glass-card p-4 rounded-3">
                   <div className="d-flex align-items-center mb-2">
@@ -168,12 +182,19 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="about-card h-100 rounded-4 overflow-hidden position-relative">
-              <img
-                src="/images/fruit-molecules-4.jpg"
-                alt="Global reach"
-                className="w-100 h-100 object-fit-cover"
-                style={{ minHeight: "350px" }}
-              />
+              <picture>
+                <source srcSet="/images/fruit-molecules-4.webp" type="image/webp" />
+                <img
+                  src="/images/fruit-molecules-4.jpg"
+                  alt="Global reach"
+                  className="w-100 h-100 object-fit-cover"
+                  style={{ minHeight: "350px" }}
+                  width={1152}
+                  height={864}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="about-card-overlay position-absolute bottom-0 start-0 w-100 p-3">
                 <div className="glass-card p-3 rounded-3">
                   <div className="d-flex align-items-center mb-2">

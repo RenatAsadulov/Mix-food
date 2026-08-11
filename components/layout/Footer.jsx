@@ -20,6 +20,9 @@ export default function Footer() {
                     src="/images/logo-light.png"
                     alt="MixFood ingredients"
                     className="footer-logo"
+                    width={560}
+                    height={174}
+                    loading="lazy"
                   />
                 </Link>
               </div>
