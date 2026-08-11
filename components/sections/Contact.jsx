@@ -20,7 +20,9 @@ export default function Contact() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('/api/contact', {
+      // Trailing slash: trailingSlash is on, so /api/contact 308-redirects
+      // here. Posting straight to the final URL avoids that extra hop.
+      const response = await fetch('/api/contact/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
