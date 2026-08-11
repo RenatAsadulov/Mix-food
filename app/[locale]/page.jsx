@@ -5,6 +5,8 @@ import Contact from '@/components/sections/Contact';
 
 const SITE_URL = 'https://mixfood-ingredients.com';
 
+const OG_LOCALES = { uk: 'uk_UA', en: 'en_GB' };
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seo' });
@@ -27,7 +29,9 @@ export async function generateMetadata({ params }) {
       url: `${SITE_URL}/${locale}/`,
       siteName: 'MixFood',
       images: [{ url: `${SITE_URL}/images/fruit-molecules-1.jpg` }],
-      locale: locale,
+      // Open Graph expects language_TERRITORY, not a bare language code
+      locale: OG_LOCALES[locale],
+      alternateLocale: Object.values(OG_LOCALES).filter((l) => l !== OG_LOCALES[locale]),
       type: 'website',
     },
     twitter: {
