@@ -53,7 +53,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="col-lg-2 col-md-6">
-              <h6 className="footer-heading mb-3">{t("nav.about")}</h6>
+              <h2 className="footer-heading mb-3">{t("nav.about")}</h2>
               <ul className="list-unstyled footer-links">
                 <li className="mb-2">
                   <a href="#about" className="footer-link">
@@ -75,7 +75,7 @@ export default function Footer() {
 
             {/* Contact CTA */}
             <div className="col-lg-3 col-md-6 ms-auto">
-              <h6 className="footer-heading mb-3">{t("nav.contact")}</h6>
+              <h2 className="footer-heading mb-3">{t("nav.contact")}</h2>
               <p className="footer-text mb-3">
                 {t("footer.contactCta")}
               </p>
