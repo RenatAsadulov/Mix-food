@@ -18,7 +18,7 @@ export async function POST(request) {
     // Send email to MixFood
     const { data, error } = await resend.emails.send({
       from: "MixFood Contact <onboarding@resend.dev>",
-      to: ["wowasadulow20@gmail.com"],
+      to: ["office.mixfood@gmail.com"],
       replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
