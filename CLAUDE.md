@@ -17,7 +17,7 @@ This is a Next.js 14+ App Router application for MixFood, a Ukrainian food flavo
 ### Tech Stack
 - **Framework**: Next.js 16 with App Router
 - **Styling**: Bootstrap 5 (via CDN) + custom CSS
-- **i18n**: next-intl with URL-based routing (/uk/, /en/, /pl/)
+- **i18n**: next-intl with URL-based routing (/uk/, /en/)
 - **Animations**: framer-motion
 - **Icons**: lucide-react
 
@@ -28,7 +28,7 @@ This is a Next.js 14+ App Router application for MixFood, a Ukrainian food flavo
 
 ### Internationalization
 - **Library**: next-intl
-- **Languages**: Ukrainian (uk - default), English (en), Polish (pl)
+- **Languages**: Ukrainian (uk - default), English (en)
 - **Translations**: JSON files in `i18n/messages/`
 - **Routing**: URL prefixes for each language
 - `useTranslations()` hook for client components

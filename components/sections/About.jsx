@@ -20,8 +20,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="display-4 fw-bold mb-5 text-center"
-          style={{ letterSpacing: "-0.02em" }}
+          className="section-title fw-bold mb-5 text-center"
         >
           {t("title")}
         </motion.h2>
@@ -47,7 +46,7 @@ export default function About() {
                 <div className="glass-card p-4 rounded-3">
                   <div className="d-flex align-items-center mb-2">
                     <Factory className="text-white me-2" size={28} />
-                    <h3 className="h4 fw-bold mb-0 text-white">
+                    <h3 className="block-title fw-bold mb-0 text-white">
                       {t("whoWeAre.title")}
                     </h3>
                   </div>
@@ -72,7 +71,7 @@ export default function About() {
                 <div className="icon-wrapper me-3">
                   <Users className="text-primary" size={32} />
                 </div>
-                <h3 className="h4 fw-bold mb-0">{t("team.title")}</h3>
+                <h3 className="block-title fw-bold mb-0">{t("team.title")}</h3>
               </div>
               <ul className="list-unstyled mb-0">
                 {teamItems.map((item, idx) => (
@@ -113,7 +112,7 @@ export default function About() {
                 <div className="glass-card p-4 rounded-3">
                   <div className="d-flex align-items-center mb-2">
                     <Beaker className="text-white me-2" size={28} />
-                    <h3 className="h4 fw-bold mb-0 text-white">
+                    <h3 className="block-title fw-bold mb-0 text-white">
                       {t("production.title")}
                     </h3>
                   </div>
@@ -145,7 +144,7 @@ export default function About() {
                 <div className="icon-wrapper me-3">
                   <Truck className="text-primary" size={32} />
                 </div>
-                <h3 className="h5 fw-bold mb-0">{t("logistics.title")}</h3>
+                <h3 className="block-title fw-bold mb-0">{t("logistics.title")}</h3>
               </div>
               <p className="text-secondary mb-3 small">
                 {t("logistics.intro")}
@@ -179,7 +178,7 @@ export default function About() {
                 <div className="glass-card p-3 rounded-3">
                   <div className="d-flex align-items-center mb-2">
                     <Globe className="text-white me-2" size={24} />
-                    <h3 className="h6 fw-bold mb-0 text-white">
+                    <h3 className="block-title fw-bold mb-0 text-white">
                       {t("geography.title")}
                     </h3>
                   </div>
@@ -202,7 +201,7 @@ export default function About() {
           <div className="about-card about-card-gradient p-5 rounded-4 text-center position-relative overflow-hidden">
             <div className="position-relative z-1">
               <Target className="text-white mb-3 mx-auto" size={48} />
-              <h3 className="h3 fw-bold mb-3 text-white">
+              <h3 className="callout-title fw-bold mb-3 text-white">
                 {t("approach.title")}
               </h3>
               <p className="lead text-white mb-0 mx-auto" style={{ maxWidth: "800px" }}>

@@ -15,11 +15,10 @@ export default function Footer() {
             <div className="col-lg-4 col-md-6">
               <div className="d-flex align-items-center mb-3">
                 <img
-                  src="/favicon.svg"
-                  alt="MixFood"
-                  className="footer-logo me-2"
+                  src="/images/logo-light.png"
+                  alt="MixFood ingredients"
+                  className="footer-logo"
                 />
-                <h5 className="mb-0 fw-bold text-white">MixFood</h5>
               </div>
               <p className="footer-text mb-3">
                 {t("hero.subtitle")}
@@ -33,11 +32,11 @@ export default function Footer() {
                   <span>office.mixfood@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+380987654321"
+                  href="tel:+380504812142"
                   className="footer-link d-flex align-items-center mb-2"
                 >
                   <Phone size={18} className="me-2" />
-                  <span>+38 (098) 765-43-21</span>
+                  <span>+38 (050) 481 2142</span>
                 </a>
                 <div className="footer-link d-flex align-items-start">
                   <MapPin size={18} className="me-2 mt-1 flex-shrink-0" />

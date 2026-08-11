@@ -48,8 +48,8 @@ export default function Contact() {
     {
       icon: Phone,
       label: t("phone"),
-      subtitle: "+38 (098) 765-43-21",
-      href: "tel:+380987654321",
+      subtitle: "+38 (050) 481 2142",
+      href: "tel:+380504812142",
       color: "#00a419",
       gradient: "linear-gradient(135deg, #00a419 0%, #006b10 100%)",
     },
@@ -75,7 +75,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="text-center mb-5"
             >
-              <h2 className="display-4 fw-bold mb-3">
+              <h2 className="section-title fw-bold mb-3">
                 {t("title")}
               </h2>
               <p className="lead text-secondary mb-3" style={{ maxWidth: "600px", margin: "0 auto" }}>
@@ -83,7 +83,7 @@ export default function Contact() {
               </p>
               <div className="d-inline-flex align-items-center gap-2 text-secondary">
                 <Clock size={18} />
-                <span className="fw-medium">{t("workingDays")}: {t("workingTime")}</span>
+                <span>{t("workingDays")}: {t("workingTime")}</span>
               </div>
             </motion.div>
 
@@ -120,7 +120,7 @@ export default function Contact() {
                         >
                           <channel.icon size={28} style={{ color: channel.color }} />
                         </div>
-                        <h3 className="h5 fw-bold mb-2 contact-channel-title">
+                        <h3 className="block-title fw-bold mb-2 contact-channel-title">
                           {channel.label}
                         </h3>
                         <p className="small text-secondary mb-0 contact-channel-subtitle">
@@ -159,7 +159,7 @@ export default function Contact() {
                       <div className="mb-3 text-success">
                         <MessageCircle size={48} />
                       </div>
-                      <h4 className="h4 fw-bold mb-2 text-success">
+                      <h4 className="block-title fw-bold mb-2 text-success">
                         {t("successTitle")}
                       </h4>
                       <p className="text-secondary mb-0">
@@ -175,7 +175,7 @@ export default function Contact() {
                     >
                       <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">
-                          <label htmlFor="quick-name" className="form-label fw-semibold">
+                          <label htmlFor="quick-name" className="form-label">
                             {t("yourName")}
                           </label>
                           <input
@@ -190,7 +190,7 @@ export default function Contact() {
                           />
                         </div>
                         <div className="mb-3 text-start">
-                          <label htmlFor="quick-email" className="form-label fw-semibold">
+                          <label htmlFor="quick-email" className="form-label">
                             {t("yourEmail")}
                           </label>
                           <input
@@ -205,7 +205,7 @@ export default function Contact() {
                           />
                         </div>
                         <div className="mb-3 text-start">
-                          <label htmlFor="quick-phone" className="form-label fw-semibold">
+                          <label htmlFor="quick-phone" className="form-label">
                             {t("yourPhone")} <span className="fw-normal text-secondary">({t("optional")})</span>
                           </label>
                           <input
@@ -220,7 +220,7 @@ export default function Contact() {
                           />
                         </div>
                         <div className="mb-3 text-start">
-                          <label htmlFor="quick-message" className="form-label fw-semibold">
+                          <label htmlFor="quick-message" className="form-label">
                             {t("message")}
                           </label>
                           <textarea

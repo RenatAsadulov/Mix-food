@@ -5,11 +5,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, useRouter, usePathname } from "@/i18n/routing";
 import { motion, AnimatePresence } from "framer-motion";
+import FlagIcon from "@/components/ui/FlagIcon";
 
 const languages = [
-  { code: "uk", label: "UA", flag: "🇺🇦" },
-  { code: "pl", label: "PL", flag: "🇵🇱" },
-  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "uk", label: "UA", flag: "ua" },
+  { code: "en", label: "EN", flag: "gb" },
 ];
 
 export default function Header() {
@@ -72,12 +72,7 @@ export default function Header() {
         <div className="d-flex align-items-center justify-content-between py-3">
           {/* Logo */}
           <Link href="/" className="logo-wrapper d-flex align-items-center text-decoration-none">
-            <img
-              src="/favicon.svg"
-              alt="MixFood Logo"
-              className="logo-img me-2"
-            />
-            <span className="logo-text fw-bold">MixFood</span>
+            <img src="/images/logo.png" alt="MixFood ingredients" className="logo-img" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -86,7 +81,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-link-modern text-decoration-none fw-medium position-relative"
+                className="nav-link-modern text-decoration-none position-relative"
               >
                 {link.label}
               </a>
@@ -99,8 +94,8 @@ export default function Header() {
                 className="lang-toggle d-flex align-items-center gap-2 btn btn-sm border-0 bg-transparent"
                 aria-label="Select language"
               >
-                <span className="lang-flag">{currentLang?.flag}</span>
-                <span className="fw-medium">{currentLang?.label}</span>
+                <FlagIcon code={currentLang?.flag} />
+                <span className="lang-label">{currentLang?.label}</span>
                 <ChevronDown size={16} className={langOpen ? "rotate-180" : ""} />
               </button>
 
@@ -122,8 +117,8 @@ export default function Header() {
                           locale === language.code ? "active" : ""
                         }`}
                       >
-                        <span>{language.flag}</span>
-                        <span className="fw-medium">{language.label}</span>
+                        <FlagIcon code={language.flag} />
+                        <span className="lang-label">{language.label}</span>
                       </button>
                     ))}
                   </motion.div>
@@ -145,10 +140,11 @@ export default function Header() {
             <div className="position-relative" ref={langDropdownMobileRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="lang-toggle-mobile btn btn-sm btn-light rounded-circle p-2"
+                className="lang-toggle-mobile btn btn-sm btn-light rounded-pill d-flex align-items-center gap-2 px-3 py-2"
                 aria-label="Select language"
               >
-                <span>{currentLang?.flag}</span>
+                <FlagIcon code={currentLang?.flag} />
+                <span className="lang-label">{currentLang?.label}</span>
               </button>
 
               <AnimatePresence>
@@ -157,18 +153,19 @@ export default function Header() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
-                    className="lang-dropdown-mobile position-absolute top-100 end-0 mt-2 bg-white rounded-3 shadow-lg"
+                    className="lang-dropdown-mobile position-absolute top-100 end-0 mt-2 bg-white rounded-3 shadow-lg overflow-hidden"
                     style={{ zIndex: 1000 }}
                   >
                     {languages.map((language) => (
                       <button
                         key={language.code}
                         onClick={() => setUserLanguage(language.code)}
-                        className={`lang-dropdown-item-mobile btn btn-sm border-0 ${
+                        className={`lang-dropdown-item-mobile btn btn-sm border-0 rounded-0 d-flex align-items-center gap-2 ${
                           locale === language.code ? "active" : ""
                         }`}
                       >
-                        {language.flag}
+                        <FlagIcon code={language.flag} />
+                        <span className="lang-label">{language.label}</span>
                       </button>
                     ))}
                   </motion.div>
@@ -209,7 +206,7 @@ export default function Header() {
                   >
                     <a
                       href={link.href}
-                      className="mobile-menu-link d-block px-3 py-3 text-decoration-none fw-medium rounded-3"
+                      className="mobile-menu-link d-block px-3 py-3 text-decoration-none rounded-3"
                       onClick={() => setOpen(false)}
                     >
                       {link.label}
