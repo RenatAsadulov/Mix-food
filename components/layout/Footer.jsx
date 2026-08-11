@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 export default function Footer() {
   const t = useTranslations();
@@ -14,11 +15,13 @@ export default function Footer() {
             {/* Company Info */}
             <div className="col-lg-4 col-md-6">
               <div className="d-flex align-items-center mb-3">
-                <img
-                  src="/images/logo-light.png"
-                  alt="MixFood ingredients"
-                  className="footer-logo"
-                />
+                <Link href="/" className="footer-logo-link d-inline-block">
+                  <img
+                    src="/images/logo-light.png"
+                    alt="MixFood ingredients"
+                    className="footer-logo"
+                  />
+                </Link>
               </div>
               <p className="footer-text mb-3">
                 {t("hero.subtitle")}

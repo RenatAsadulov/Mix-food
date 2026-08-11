@@ -496,6 +496,14 @@ section {
   max-width: 190px;
 }
 
+.footer-logo-link {
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo-link:hover {
+  opacity: 0.8;
+}
+
 .footer-heading {
   color: #fff;
   font-weight: 600;
